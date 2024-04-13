@@ -3,7 +3,17 @@
 <html>
     <link rel='stylesheet' type='text/css' href="styles/mainpage.css">
     <head>
+        <script>
+            function initMap() {
+                var center = { lat: 38.9717, lng: -95.2353 };
+    
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 19, center: center, disableDefaultUI: true,});
 
+                var marker = new google.maps.Marker({ position: center, map: map });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR924KH0p6IDMCsOaG5rMmEo17JSl5K2U&callback=initMap" async defer></script>
     </head>
 
     <body>
@@ -13,8 +23,7 @@
 
         <div>
             <a href="mainpage2.html" id="buttonthing"><img src="https://www.svgrepo.com/show/8335/list.svg" height="25px" width="25px" id="listicon"></a>
-            <img src="https://m.media-amazon.com/images/I/71ZVA6QfbOL._AC_UF894,1000_QL80_.jpg" width="390" height="623" id="bigmap"/>
-
+            <div id="map"></div>
         </div>
 
         <div id="botbar" class="sticky">
