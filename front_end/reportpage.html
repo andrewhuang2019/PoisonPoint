@@ -8,22 +8,29 @@
 
     <body>
 
+        <script src="reportpage.js" method="get"></script>
+
         <h3>Report</h3>
 
         <br />
+
         <label for="places" ></label>
+        <div id="location_division">
+            <p>Where did you eat?</p>
+            <select name="location" id="places">
+                <option value="Chick-Fil-A">Chick-Fil-A</option>
+                <option value="KFC">KFC</option>
+                <option value="Chipotle">Chipotle</option>
 
-        <p>Where did you eat?</p>
-        <select name="location" id="places">
-            <option value="Chick-Fil-A">Chick-Fil-A</option>
-            <option value="KFC">KFC</option>
-            <option value="Chipotle">Chipotle</option>
+            </select>
 
-        </select>
+            <input type="date" name="time">
 
-        <form>
-            <button formaction="report.php">+</button>
-        </form>
+            <br />
+
+        </div>
+
+            <button onclick="create_new_location()">+</button>
 
         <select name="food_item" id="food">
             <option value="Chicken Sandwich">Chicken Sandwich</option>
