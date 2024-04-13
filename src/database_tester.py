@@ -1,6 +1,6 @@
 from database_helper import DatabaseHelper
 
-if __name__ == "__main__":
+def test_basic_db_commands():
     db = DatabaseHelper()
     db.delete_dbs()
     db.initialize_dbs()
@@ -10,3 +10,10 @@ if __name__ == "__main__":
     db.add_to_reports("cfa_hq_id", 1235982063, "waffle_fries")
     db.print_reports()
     db.print_restaurants()
+
+def main():
+    pass
+    # test_basic_db_commands()
+
+if __name__ == "__main__":
+    main()
