@@ -21,7 +21,7 @@ function create_new_location(){
     //document.getElementById('places').addEventListener('click');
     
 
-    new_select.onchange = select_restaurant(document.getElementById(this));
+    //new_select.onchange = select_restaurant(document.getElementById(this));
 
     //creates a new option tag in the html document
 
