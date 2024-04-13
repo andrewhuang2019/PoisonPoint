@@ -32,6 +32,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     color: inherit;
+    z-index: 1;
 }
 #listicon{
     position: relative;
@@ -46,4 +47,8 @@ h3 {
     margin-top: 4px;
     width: 100px;
     height: 100px;
+}
+#map {
+    height: 623px;
+    width: 390px;
 }
