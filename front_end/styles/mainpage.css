@@ -1,0 +1,49 @@
+#topbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:column;
+}
+h3 {
+    font-size: 40px;
+    margin-top:50px;
+}
+#botbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+#buttonthing{
+    width: 50px;
+    height: 35px;
+    border-style: solid;
+    border-radius: 100px;
+    position: absolute;
+    left: 320px;
+    top: 150px;
+    background-color: #F3DCFF;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+}
+#listicon{
+    position: relative;
+    top: 4px;
+}
+.botbar{
+    border-style:solid;
+    border-color: black;
+    width: 200px;
+}
+.icon{
+    margin-top: 4px;
+    width: 100px;
+    height: 100px;
+}
