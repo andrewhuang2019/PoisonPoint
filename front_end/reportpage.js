@@ -35,17 +35,17 @@ function create_new_location(){
 
     }
     
-    //appends the select tag to the tag with the location_division id
-    document.getElementById('location_division').appendChild(new_select);
+    //appends the select tag to the tag with the location_form id
+    document.getElementById('location_form').appendChild(new_select);
 
     var new_time = document.createElement('input');
     new_time.type = "date";
     new_time.name = "time" + String(num);
 
-    document.getElementById('location_division').appendChild(new_time);
+    document.getElementById('location_form').appendChild(new_time);
 
-    //appends a break to the tag with the location_division id
-    document.getElementById('location_division').appendChild(document.createElement('br'));
+    //appends a break to the tag with the location_form id
+    document.getElementById('location_form').appendChild(document.createElement('br'));
 
     num++;
 
