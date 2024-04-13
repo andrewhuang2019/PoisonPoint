@@ -14,30 +14,30 @@ function create_new_location(){
     //creates a new select tag in the html document
     var new_select = document.createElement('select');
 
-    //sets the select tag attributes for id and name
-    new_select.id = "places" + location_number;
-    new_select.name = "location" + String(location_number);
+    // //sets the select tag attributes for id and name
+    // new_select.id = "places" + location_number;
+    // new_select.name = "location" + String(location_number);
 
-    //document.getElementById('places').addEventListener('click');
+    // //document.getElementById('places').addEventListener('click');
     
 
-    //new_select.onchange = select_restaurant(document.getElementById(this));
+    // //new_select.onchange = select_restaurant(document.getElementById(this));
 
-    //creates a new option tag in the html document
+    // //creates a new option tag in the html document
 
 
-    //sets the option tag attributes for the text content and its value
-    for (let num in current_restaurant_array){
-        var option = document.createElement('option');
-        option.textContent = current_restaurant_array[num];
-        option.value = option.textContent;
-        option.id = "location_option" + num;
-        new_select.appendChild(option);
+    // //sets the option tag attributes for the text content and its value
+    // for (let num in current_restaurant_array){
+    //     var option = document.createElement('option');
+    //     option.textContent = current_restaurant_array[num];
+    //     option.value = option.textContent;
+    //     option.id = "location_option" + num;
+    //     new_select.appendChild(option);
 
-    }
+    // }
     
-    //appends the select tag to the tag with the location_form id
-    document.getElementById('location_form').appendChild(new_select);
+    // //appends the select tag to the tag with the location_form id
+    // document.getElementById('location_form').appendChild(new_select);
 
     var new_time = document.createElement('input');
     new_time.type = "date";
