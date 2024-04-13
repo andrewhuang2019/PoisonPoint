@@ -21,7 +21,7 @@ function create_new_location(){
     //document.getElementById('places').addEventListener('click');
     
 
-    new_select.onchange = select_restaurant(this);
+    new_select.onchange = select_restaurant(document.getElementById(this));
 
     //creates a new option tag in the html document
 
@@ -73,7 +73,7 @@ function check_checkboxes(){
     }
 }
 
-function select_restaurant(selected_element){
+function select_restaurant(restaurant){
     /*
     if (selected_element.value){
         selected_restaurant.add(selected_element.value);
@@ -82,7 +82,7 @@ function select_restaurant(selected_element){
     */
     //trying to get the option value so that i can reference it and pass in the selected restaurant value
     //so that update restaurant array can splice it out
-    selected_restaurant = document.getElementById('places').value;
+    selected_restaurant = restaurant.value;
 }
 
 function update_restaurant_array(){
