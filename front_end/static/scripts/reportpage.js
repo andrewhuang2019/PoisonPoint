@@ -1,43 +1,55 @@
 
 var location_number = 0;
 
-var current_restaurant_array = ["Pizza Hut", "Chipotle", "McDonalds"];
 var removed_restaurant_array = [];
 var selected_restaurant = "";
 var selected_foods = [];
 
+//<input type="text" placeholder="Enter a restaurant" id="autocomplete0" />
+//<script>initAutocomplete(0)</script>
+//<input type="date" name="time">
 
 function create_new_location(){
 
-    update_restaurant_array();
+    //update_restaurant_array();
 
     //creates a new select tag in the html document
-    var new_select = document.createElement('select');
+    //var new_select = document.createElement('select');
 
-    //sets the select tag attributes for id and name
-    new_select.id = "places" + location_number;
-    new_select.name = "location" + String(location_number);
+    var new_input = document.createElement('input');
 
-    //document.getElementById('places').addEventListener('click');
+    new_input.type = "text";
+    new_input.id = 'autocomplete' + location_number;
+    new_input.placeholder = "Enter a restaurant";
+
+    document.getElementById('location_form').append(new_input);
+
+    initAutocomplete(location_number);
+
+    // //sets the select tag attributes for id and name
+    // new_select.id = "places" + location_number;
+    // new_select.name = "location" + String(location_number);
+
+    // //document.getElementById('places').addEventListener('click');
     
 
-    //new_select.onchange = select_restaurant(document.getElementById(this));
+    // //new_select.onchange = select_restaurant(document.getElementById(this));
 
-    //creates a new option tag in the html document
+    // //creates a new option tag in the html document
 
 
-    //sets the option tag attributes for the text content and its value
-    for (let num in current_restaurant_array){
-        var option = document.createElement('option');
-        option.textContent = current_restaurant_array[num];
-        option.value = option.textContent;
-        option.id = "location_option" + num;
-        new_select.appendChild(option);
+    // //sets the option tag attributes for the text content and its value
+    // for (let num in current_restaurant_array){
+    //     var option = document.createElement('option');
+    //     option.textContent = current_restaurant_array[num];
+    //     option.value = option.textContent;
+    //     option.id = "location_option" + num;
+    //     new_select.appendChild(option);
 
-    }
+    // }
     
-    //appends the select tag to the tag with the location_form id
-    document.getElementById('location_form').appendChild(new_select);
+    // //appends the select tag to the tag with the location_form id
+    // document.getElementById('location_form').appendChild(new_select);
 
     var new_time = document.createElement('input');
     new_time.type = "date";
@@ -49,17 +61,18 @@ function create_new_location(){
     //appends a break to the tag with the location_form id
     document.getElementById('location_form').appendChild(document.createElement('br'));
 
-    num++;
+    location_number++;
 
 }
 
+/*
 function store_array(restaurants){
 
     for(let restaurant in restaurants){
         updated_array.push(restaurant);
     }
 
-}
+}*/
 
 function check_checkboxes(){
     var checkboxes = document.querySelectorAll('input[name="food[]"]:checked');
@@ -96,4 +109,40 @@ function update_restaurant_array(){
 
 function add_restaurant_array(){
 
+}
+
+let autocomplete;
+function initAutocomplete(num){
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('autocomplete' + num),
+        {
+        types: ['establishment'],
+        componentRestrictions: {'country':['US']},
+        fields: ['place_id','geometry','name']
+    });
+    autocomplete.addListener('place_changed',onPlaceChanged);
+}
+
+function onPlaceChanged(){
+    var place = autocomplete.getPlace();
+
+    if (!place.geometry){
+        document.getElementById('autocomplete').placeholder = 'Enter a restaurant';
+    } else{
+        var data = {
+            "name": place.name,
+            "ID": place.place_id,
+            "location": place.geometry
+        };
+        
+        var jsonData = JSON.stringify(data);
+
+        fetch('/process', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            },
+            body: jsonData
+        })
+    }
 }
