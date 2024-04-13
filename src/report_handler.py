@@ -17,10 +17,7 @@ class ReportHandler:
         
         # holds the list of foods that are prone to give food poisoning
         # fish, lettuce, chicken, beef, etc..
-        issue_foods = []
-        self.index_to_food = {}
-        for i, food in enumerate(issue_foods):
-            self.index_to_food[i] = food
+        self.issue_foods = []
 
     # The weight is our way of approximating the valid amount of reports a restaurant has
     # Essentially, older reports have less weight than newer reports, reaching zero weight at three days
@@ -61,7 +58,7 @@ class ReportHandler:
 
         # get sorted ids
         ids = self.google_api.get_place_ids_in_radius_with_coords(lat, lng, radius)
-        ids.sort(reverse=True, key=self.get_danger_weight())
+        ids.sort(reverse=True, key=self.get_danger_weight)
 
         # limit to LIMIT
         if(len(ids) > LIMIT):
@@ -75,14 +72,45 @@ class ReportHandler:
     def get_info_from_id(self, id):
         self.google_api.get_info_from_place_id(self, id)
 
-    # Returns a list of the most likely causes of food poisoning for a given restaurant
-    # It returns a list of the highest vals of (items_eaten) / (total_reports)
+    # Returns a list of tuples of the most likely causes of food poisoning for a given restaurant
+    # Values are sorted by the highest vals of (items_eaten) / (total_reports)
+    # Returns (food_item, ratio_mentioned_above)
     def get_commonly_reported_items(self, id):
         reports_by_id = self.db.get_reports_with_place_id(id)
 
         total_reports = len(reports_by_id)
 
+        # initialize a dict of zero sums (no bad reports for any item yet)
+        index_to_sum_poisoned = []
+        
+        # traverse through each report for a given restaurant
+        for report in reports_by_id:
+            # get the true/false list for each report
+            bool_list = self._get_bool_list_from_db_str(report[4])
+            for i, food_bool in enumerate(bool_list):
+                if(food_bool):
+                    # keep count of each True value
+                    index_to_sum_poisoned[i] += 1
+
+        index_to_ratio = [num / total_reports for num in index_to_sum_poisoned]
+
+        tuples_of_food_ratio = []
+        for i, num in enumerate(index_to_ratio):
+            food_ratio = (self.issue_foods[i], num)
+            tuples_of_food_ratio.append(food_ratio)
+        
+        # sorts the tuples by their ratio
+        sorted_tuples = tuples_of_food_ratio.sort(reverse=True, key=self._helper_sort)
+
+        return sorted_tuples
+    
+    def _helper_sort(self, food_ratio_tuple):
+        return food_ratio_tuple[1]
+        
     # Since items_eaten is stored as a string like "True,False,False,True"
     # We need a function to turn that into an actual list of booleans
-    def get_bool_list_from_db_str(self, string):
-        to_return = []
+    def _get_bool_list_from_db_str(self, db_string):
+        db_strings = db_string.strip().split(",")
+        return [(string == "True") for string in db_strings]
+    
+    
