@@ -16,7 +16,7 @@ class DatabaseHelper:
     
     def __init__(self):
         self.REPORTS_FILE_NAME = "reports.db"
-        self.reports_id = 1
+        self.reports_id = len(self.get_all_reports() + 1)
 
     def open(self):
         return sqlite3.connect(self.REPORTS_FILE_NAME)
@@ -38,9 +38,10 @@ class DatabaseHelper:
 
             reports.close()
 
-            print("Reports table has been succesfully initalized.")
+            #print("Reports table has been succesfully initalized.")
         except:
-            print("Reports table has already been initalized.")
+            pass
+            #print("Reports table has already been initalized.")
 
     # add a reports to the reports db
     def add_to_reports(self, place_id, days_elapsed, time, items_eaten, restaurant_name):
@@ -54,16 +55,21 @@ class DatabaseHelper:
         reports.commit()
         reports.close()
     
+    # gets all pieces of data from the database
+    def get_all_reports(self):
+
+        reports = self.open()
+        table = reports.execute("SELECT ID, PLACE_ID, DAYS_ELAPSED, TIME, ITEMS_EATEN, RESTAURANT_NAME from REPORTS")
+        reports.close()
+        return table
+
     # returns a list of all reports relating to a place_id
     def get_reports_with_place_id(self, place_id):
-        reports = self.open()
 
-        table = reports.execute("SELECT ID, PLACE_ID, DAYS_ELAPSED, TIME, ITEMS_EATEN, RESTAURANT_NAME from REPORTS")
+        table = self.get_all_reports()
         
         # filters rows
         selected = [row for row in table if row[1]==place_id]
-
-        reports.close()
 
         return selected
     
