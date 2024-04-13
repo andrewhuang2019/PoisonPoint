@@ -24,7 +24,7 @@ To create the extensive back-end, we used Python and SQL to populate the data an
 ## What we learned
 Each of us decided to tackle a challenge by being a part of development that was most unfamiliar to us. For example, Andrew and Cooper worked together on the front-end application, creating low and high fidelity prototypes of the design and using languages (HTML, CSS, Javascript) that they were not familiar in. On the other hand, John and Keaton chose to work with SQL databases and APIs with queries in order to supply our product with core functionality - concepts which they had little experience in before.  
 
-# Dependencies
+### Dependencies
 pip install python-google-places  
 pip install python-dotenv  
 pip install geopy  
