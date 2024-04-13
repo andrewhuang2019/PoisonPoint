@@ -113,4 +113,5 @@ class ReportHandler:
         db_strings = db_string.strip().split(",")
         return [(string == "True") for string in db_strings]
     
-    
+    def add_to_db(self, place_id, days_elapsed, time, items_eaten, restaurant_name):
+        self.db.add_to_reports(place_id, days_elapsed, time, items_eaten, restaurant_name)
