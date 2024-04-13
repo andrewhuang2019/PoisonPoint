@@ -29,7 +29,7 @@ function create_new_location(){
 
     var new_time = document.createElement('input');
     new_time.type = "date";
-    new_time.name = "";
+    new_time.name = "time" + String(num);
 
     //appends a break to the tag with the location_division id
     document.getElementById('location_division').appendChild(document.createElement('br'));
