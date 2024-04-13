@@ -1,5 +1,5 @@
 
-var num = 0;
+var location_number = 0;
 
 var current_restaurant_array = ["Pizza Hut", "Chipotle", "McDonalds"];
 var removed_restaurant_array = [];
@@ -15,8 +15,8 @@ function create_new_location(){
     var new_select = document.createElement('select');
 
     //sets the select tag attributes for id and name
-    new_select.id = "places" + num;
-    new_select.name = "location" + String(num);
+    new_select.id = "places" + location_number;
+    new_select.name = "location" + String(location_number);
 
     //document.getElementById('places').addEventListener('click');
     
@@ -31,6 +31,7 @@ function create_new_location(){
         var option = document.createElement('option');
         option.textContent = current_restaurant_array[num];
         option.value = option.textContent;
+        option.id = "location_option" + num;
         new_select.appendChild(option);
 
     }
@@ -40,7 +41,8 @@ function create_new_location(){
 
     var new_time = document.createElement('input');
     new_time.type = "date";
-    new_time.name = "time" + String(num);
+    new_time.name = "time" + String(location_number);
+    new_time.id = "time" + String(location_number);
 
     document.getElementById('location_form').appendChild(new_time);
 
