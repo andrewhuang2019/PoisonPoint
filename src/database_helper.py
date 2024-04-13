@@ -5,7 +5,7 @@ import os
         The report database has:
             - an ID, used for something in SQLite (idk)
             - A google place ID of the parent restaurant it was made for
-            - The current time the report was made, measured in seconds since 1/1/1970
+            - The days passed since the report was made (integer)
             - An X length list "[True,False,True...]" casted to a string representing what
                 categories of food an individual consumed during a single visit
             - Name of restaurant 
@@ -26,6 +26,7 @@ class DatabaseHelper:
         reports = self.open()
 
         try:
+            self.reports_id = 1
             reports.execute('''CREATE TABLE REPORTS
             (ID INT PRIMARY KEY      NOT NULL,
             PLACE_ID        TEXT     NOT NULL,
