@@ -5,7 +5,7 @@ function add_to_database(data){
 
     return new Promise((resolve, reject) => {
 
-        fetch('local-url', {
+        fetch('http://127.0.0.1:5500', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,8 +28,8 @@ function get_from_database(data){
 
     return new Promise((resolve, reject) => {
 
-        fetch('local-url', {
-            method: 'post',
+        fetch('http://127.0.0.1:5500', {
+            method: 'get',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -51,7 +51,7 @@ function remove_from_database(data){
 
     return new Promise((resolve, reject) => {
 
-        fetch('local-url', {
+        fetch('http://127.0.0.1:5500', {
             method: 'delete',
             headers: {
                 'Content-Type': 'application/json'
