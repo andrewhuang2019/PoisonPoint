@@ -12,25 +12,29 @@
 
         <h3>Report</h3>
 
-        <br />
+        <br /> 
+        
+            <div id="location_division">
+                <form action="reportpage.js" method="post" id="location_form">
 
-        <label for="places" ></label>
-        <div id="location_division">
-            <p>Where did you eat?</p>
-            <select name="location" id="places">
-                <option value="Chick-Fil-A">Chick-Fil-A</option>
-                <option value="KFC">KFC</option>
-                <option value="Chipotle">Chipotle</option>
+                    <p>Where did you eat?</p>
+                    <select name="location" id="places">
+                        <option value="Chick-Fil-A">Chick-Fil-A</option>
+                        <option value="KFC">KFC</option>
+                        <option value="Chipotle">Chipotle</option>
+        
+                    </select>
+        
+                    <input type="date" name="time">
+        
+                    <br />
 
-            </select>
+                </form>
+                <button onclick="create_new_location()">+</button> <br />
+                <button type="submit" form="location_form">Submit Restaurants</button>
+            </div>    
 
-            <input type="date" name="time">
 
-            <br />
-
-        </div>
-
-            <button onclick="create_new_location()">+</button>
 
         <div id="food_division">
 
