@@ -10,18 +10,19 @@
         <div id='topbar'>
             <h3>Report</h3>
         </div>
-        <script src="reportpage.js" method="get"></script>
+        <script src="{{url_for('static', filename='scripts/reportpage.js')}}"></script>
         
         <br /> 
         
             <div id="location_division">
-                <form action="reportpage.js" method="post" id="location_form">
+                <form id="location_form">
 
                     <h4>Where did you eat?</h4>
 
                 </form>
                 <button onclick="create_new_location()">+</button> <br />
-                <button type="submit" form="location_form">Submit Restaurants</button>
+                <button onclick="onPlaceChanged()">Submit Restaurants</button>
+
             </div>    
 
 
