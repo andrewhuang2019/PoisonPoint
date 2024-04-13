@@ -1,0 +1,53 @@
+#topbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:column;
+    position: fixed;
+}
+h3 {
+    font-size: 40px;
+    margin-top:50px;
+}
+#topone{
+    padding-top: 150px;
+    
+    display:list-item;
+    
+}
+
+body{
+    background-color: #F8EAFF ;
+    width: 390px;
+    height: 1000px;
+}
+#botbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: fixed;
+}
+#wtmw{
+    height: 623px;
+}
+
+.botbar{
+    border-style:solid;
+    border-color: black;
+    width: 200px;
+}
+.icon{
+    margin-top: 4px;
+    width: 100px;
+    height: 100px;
+}
+#map {
+    height: 623px;
+    width: 390px;
+}
