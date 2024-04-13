@@ -3,7 +3,7 @@
 <html>
 
     <head>
-
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.&libraries=places&key=AIzaSyDR924KH0p6IDMCsOaG5rMmEo17JSl5K2U&libraries=places&callback=initAutocomplete" async defer></script>
     </head>
 
     <body>
@@ -18,13 +18,10 @@
                 <form action="reportpage.js" method="post" id="location_form">
 
                     <p>Where did you eat?</p>
-                    <select name="location" id="places">
-                        <option value="Chick-Fil-A">Chick-Fil-A</option>
-                        <option value="KFC">KFC</option>
-                        <option value="Chipotle">Chipotle</option>
-        
-                    </select>
-        
+
+                    <input type="text" placeholder="Enter a restaurant" id="autocomplete" />
+                    <script>initAutocomplete()</script>
+                    
                     <input type="date" name="time">
         
                     <br />
