@@ -1,28 +1,3 @@
-
-'''
-from flask import Flask, request, render_template
-
-app = Flask(__name__)
-
-@app.route('/', methods =['GET','POST'])
-def loginpage():
-    if request.method == 'GET':
-        
-        return render_template('loginpage.html')
-    elif request.method == 'POST':
-        username = request.form.get("username")
-        return mainpage(username)
-
-
-@app.route('/mainpage')
-def mainpage(username):
-    print(username)
-    return render_template('mainpage.html', username=username)
-    
-if __name__ == '__main__':
-    app.run(debug=True)
-    '''
-    
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -46,6 +21,10 @@ def educationpage():
 @app.route('/reportpage')
 def reportpage():
     return render_template('reportpage.html')
+
+@app.route('/summarypage')
+def summarypage():
+    return render_template('summarypage.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
