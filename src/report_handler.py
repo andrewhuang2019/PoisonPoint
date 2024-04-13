@@ -9,7 +9,7 @@ class ReportHandler:
     # The weight is our way of approximating the valid amount of reports a restaurant has
     # Essentially, older reports have less weight than newer reports, reaching zero weight at three days
     # This is because you are most likely not getting food poisoning from food you ate three days ago.
-    def calculate_restaurant_weight_(self, restr_id):
+    def get_restaurant_weight(self, restr_id):
         reports_by_restr = self.db.get_reports_with_place_id(restr_id)
 
         sum_weights = 0
