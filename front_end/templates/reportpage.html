@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 
 <html>
-
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/reportpage.css') }}">
     <head>
-
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.&libraries=places&key=AIzaSyDR924KH0p6IDMCsOaG5rMmEo17JSl5K2U&libraries=places&callback=initAutocomplete" async defer></script>
     </head>
 
     <body>
-
+        <div id='topbar'>
+            <h3>Report</h3>
+        </div>
         <script src="reportpage.js" method="get"></script>
-
-        <h3>Report</h3>
-
+        
         <br /> 
         
             <div id="location_division">
                 <form action="reportpage.js" method="post" id="location_form">
 
-                    <p>Where did you eat?</p>
-                    <select name="location" id="places">
-                        <option value="Chick-Fil-A">Chick-Fil-A</option>
-                        <option value="KFC">KFC</option>
-                        <option value="Chipotle">Chipotle</option>
-        
-                    </select>
-        
-                    <input type="date" name="time">
-        
-                    <br />
+                    <h4>Where did you eat?</h4>
 
                 </form>
                 <button onclick="create_new_location()">+</button> <br />
-                <button onclick=""></button>
                 <button type="submit" form="location_form">Submit Restaurants</button>
             </div>    
 
@@ -39,7 +28,7 @@
 
         <div id="food_division">
 
-            <h4> I ate the following: </h4> <br />
+            <h4> I ate the following: </h4>
 
             <form>
                 <input type="checkbox" name="food[]" id="food1" value="fish">

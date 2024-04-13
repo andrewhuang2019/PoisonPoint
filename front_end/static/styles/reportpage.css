@@ -17,16 +17,11 @@ h3 {
     display:list-item;
     
 }
-#mp1{
-    background-color: #F8EAFF ;
-    width: 390px;
-    height: 844px;
+body{
+    background-color: antiquewhite;
 }
-#mp2{
-    background-color: #F8EAFF ;
-    width: 390px;
-    height: 1000px;
-}
+
+
 #botbar{
     background-color: #F3DCFF;
     height: 115px;
@@ -37,29 +32,7 @@ h3 {
     justify-content: space-between;
     position: fixed;
 }
-#buttonthing{
-    width: 50px;
-    height: 35px;
-    border-style: solid;
-    border-radius: 100px;
-    position: absolute;
-    left: 320px;
-    top: 150px;
-    background-color: #F3DCFF;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    color: inherit;
-    position: fixed;
-    z-index: 1;
-}
-#listicon{
-    position: relative;
-    top: 4px;
-}
-#wtmw{
-    height: 623px;
-}
+
 .botbar{
     border-style:solid;
     border-color: black;
@@ -69,8 +42,4 @@ h3 {
     margin-top: 4px;
     width: 100px;
     height: 100px;
-}
-#map {
-    height: 623px;
-    width: 390px;
 }
