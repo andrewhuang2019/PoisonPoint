@@ -11,3 +11,14 @@ This is _____, your innovative solution to diagonosing which restaurant you were
 
 ## About the Project
 
+# Dependencies
+**For getrestaurant.py:**  
+pip install python-google-places  
+pip install python-dotenv  
+pip install geopy  
+  
+**For getmenu.py:**    
+pip install requests  
+pip install beautifulsoup4  
+pip install pandas  
+pip install -U selenium  
