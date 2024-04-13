@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    
+    <input type="text" placeholder="Enter a place" id="autocomplete" />
+    <p id="details"></p>
+    <script>
+        let autocomplete;
+        function initAutocomplete(){
+            autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById('autocomplete'),
+                {
+                types: ['establishment'],
+                componentRestrictions: {'country':['US']},
+                fields: ['place_id','geometry','name']
+            });
+            autocomplete.addListener('place_changed',onPlaceChanged);
+        }
+
+        function onPlaceChanged(){
+            var place = autocomplete.getPlace();
+
+            if (!place.geometry){
+                document.getElementById('autocomplete').placeholder = 'Enter a place';
+            } else{
+                document.getElementById('details').innerHTML = place.name;
+                var data = {
+                    "name": place.name,
+                    "ID": place.place_id,
+                    "location": place.geometry
+                };
+                var json = JSON.stringify(data)
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.&libraries=places&key=AIzaSyDR924KH0p6IDMCsOaG5rMmEo17JSl5K2U&libraries=places&callback=initAutocomplete" async defer></script>
+
+</body>
+
+</html>
