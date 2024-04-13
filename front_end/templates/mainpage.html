@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 
 <html>
-    <link rel='stylesheet' type='text/css' href="styles/mainpage.css">
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/mainpage.css') }}">
     <head>
 
     </head>
 
-    <body>
+    <body id='mp1'>
         <div id="topbar" class="sticky">
             <h3> Map </h3>
         </div>
 
         <div>
-            <a href="mainpage2.html" id="buttonthing"><img src="https://www.svgrepo.com/show/8335/list.svg" height="25px" width="25px" id="listicon"></a>
+            <a href="mainpage2" id="buttonthing"><img src="https://www.svgrepo.com/show/8335/list.svg" height="25px" width="25px" id="listicon"></a>
             <img src="https://m.media-amazon.com/images/I/71ZVA6QfbOL._AC_UF894,1000_QL80_.jpg" width="390" height="623" id="bigmap"/>
 
         </div>
 
         <div id="botbar" class="sticky">
             <a class="botbar"><img src="https://static-00.iconduck.com/assets.00/gear-emoji-2045x2048-orqh5x5v.png" width="50" height="50" class="icon"/></a>
-            <a href="reportpage.html" class="botbar"> <img src="https://www.svgrepo.com/show/93424/exclamation-mark-inside-a-circle.svg" width="50" height="50" class="icon"/> </a>
-            <a href="educationpage.html" class="botbar"> <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/books.png" width="50" height="50" class="icon"/> </a>
+            <a href="reportpage" class="botbar"> <img src="https://www.svgrepo.com/show/93424/exclamation-mark-inside-a-circle.svg" width="50" height="50" class="icon"/> </a>
+            <a href="educationpage" class="botbar"> <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/books.png" width="50" height="50" class="icon"/> </a>
         </div>
 
 

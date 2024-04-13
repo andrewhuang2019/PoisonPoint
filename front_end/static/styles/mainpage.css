@@ -11,7 +11,18 @@ h3 {
     font-size: 40px;
     margin-top:50px;
 }
-body{
+#topone{
+    padding-top: 150px;
+    
+    display:list-item;
+    
+}
+#mp1{
+    background-color: #F8EAFF ;
+    width: 390px;
+    height: 844px;
+}
+#mp2{
     background-color: #F8EAFF ;
     width: 390px;
     height: 1000px;
