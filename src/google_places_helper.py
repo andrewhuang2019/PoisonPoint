@@ -26,6 +26,7 @@ class GooglePlacesHelper:
 
     # helper function for the ones above, gets place id from lat, lng
     def _get_place_ids_from_coords(self, lat, lng, radius):
+
         query = self.google_places.nearby_search(
             lat_lng = {'lat':lat,'lng':lng},
             radius = radius,
@@ -38,14 +39,12 @@ class GooglePlacesHelper:
     def get_info_from_place_id(self, place_id):
 
         place = self.google_places.get_place(place_id=place_id)
-
         # evil method that magically makes more attributes of the place object appear
         place.get_details()
 
         return_dict = {"name" : place.name,
                        "address" : place.formatted_address,
                        "img" : self._get_first_image_from_place(place)}
-        
         return return_dict
     
     # returns the first url from a given place obj
@@ -63,7 +62,7 @@ class GooglePlacesHelper:
     def _test(self):
         ids = self.get_place_ids_in_radius_with_city_state("Lawrence, KS")
         id_0 = ids[5]
-        print (self.get_info_from_place_id(id_0))
+        # print (self.get_info_from_place_id(id_0))
 
 if __name__ == "__main__":
     pass
