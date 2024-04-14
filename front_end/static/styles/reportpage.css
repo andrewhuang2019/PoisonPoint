@@ -7,7 +7,7 @@
     flex-direction:column;
     position: fixed;
     border-style: solid;
-   
+    top: 0px;
 }
 h3 {
     font-size: 40px;
@@ -20,6 +20,7 @@ h3 {
 }
 body{
     background-color: #F8EAFF;
+    height: 800px;
 }
 
 

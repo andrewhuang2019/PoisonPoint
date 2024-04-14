@@ -9,15 +9,18 @@
     border-style: solid;
     top: 0px;
 }
-h3 {
-    font-size: 40px;
-   
-}
-h4{
-    font-size: 25px;
+h1 {
     text-decoration: underline;
+    font-size: 30px;
 }
-p{
+h2 {
+    
+    font-size: 20px;
+}
+h3{
+    font-size: 40px;
+}
+li{
     font-size: 20px;
 }
 #topone{
@@ -29,7 +32,7 @@ p{
 body{
     background-color: #F8EAFF ;
     width: 390px;
-    height: 1250px;
+    height: 1000px;
 }
 #botbar{
     background-color: #F3DCFF;

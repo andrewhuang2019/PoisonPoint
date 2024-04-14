@@ -26,5 +26,9 @@ def reportpage():
 def summarypage():
     return render_template('summarypage.html')
 
+@app.route('/aboutpage')
+def aboutpage():
+    return render_template('aboutpage.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
