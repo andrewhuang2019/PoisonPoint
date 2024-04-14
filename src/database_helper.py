@@ -16,7 +16,16 @@ class DatabaseHelper:
     
     def __init__(self):
         self.REPORTS_FILE_NAME = "reports.db"
-        self.reports_id = len(self.get_all_reports() + 1)
+
+        num = 0
+
+        # initialize db if it does not exist
+        try:
+            num = self.get_all_reports().arraysize
+        except:
+            self.initialize_dbs()
+
+        self.reports_id = num + 1
 
     def open(self):
         return sqlite3.connect(self.REPORTS_FILE_NAME)
@@ -65,12 +74,13 @@ class DatabaseHelper:
 
     # returns a list of all reports relating to a place_id
     def get_reports_with_place_id(self, place_id):
-
-        table = self.get_all_reports()
-        
+              
+        reports = self.open()
         # filters rows
+        table = reports.execute("SELECT ID, PLACE_ID, DAYS_ELAPSED, TIME, ITEMS_EATEN, RESTAURANT_NAME from REPORTS")
         selected = [row for row in table if row[1]==place_id]
 
+        reports.close()
         return selected
     
     # print reports db
