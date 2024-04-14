@@ -4,11 +4,8 @@
     <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/mainpage.css') }}">
     <head>
         <script>
-            var lati = "{{data.lat}}";
-            var long = "{{data.lng}}";
-
             function initMap() {
-                var center = { lat: lati, lng: long };   //set 'realtime' user location here
+                var center = { lat: 38.9579144000925, lng: -95.25368879156473 };   //set 'realtime' user location here
     
                 var map = new google.maps.Map(
                     document.getElementById('map'), { zoom: 19, center: center, disableDefaultUI: true,});
@@ -22,7 +19,7 @@
                     anchor: new google.maps.Point(25, 50) 
                 };
                 //coords of red zone restaurants
-                var coords = [{lat: 38.971776351172444, lng:  -95.23572734275672}, {lat: 38.97240970939415, lng:  -95.23609258270864}]
+                var coords = [{lat: 38.955204755519965, lng:  -95.25244754438084}, {lat:  38.957446548106056, lng:   -95.24819620386074}]
 
                 for (coord of coords){
                     var marker = new google.maps.Marker({
