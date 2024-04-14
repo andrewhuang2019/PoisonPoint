@@ -1,4 +1,4 @@
-# Name Placeholder
+# Poison Point
 
 ## Demo  
 [Video](url) [Devpost](https://devpost.com/software/646853)
