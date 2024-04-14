@@ -114,7 +114,7 @@ def update_db(summaries):
             # print(f"restr_name: {restr_name}")
 
             rh.add_to_db(place_id, days_elapsed, time_sec, items_eaten, restr_name)
-            render_template("/reportpage")
+            render_template("/summarypage")
 
 if __name__ == '__main__':
     app.run(debug=True)
