@@ -1,3 +1,10 @@
+body{
+    background-color: #F8EAFF;
+}
+h3 {
+    font-size: 40px;
+    
+}
 #topbar{
     background-color: #F3DCFF;
     height: 115px;
@@ -8,14 +15,6 @@
     border-style: solid;
     top: 0px;
 }
-h3 {
-    font-size: 40px;
-    
-}
-body{
-    background-color: #F8EAFF;
-}
-
 #buttonthing{
     width: 75px;
     height: 50px;
@@ -35,30 +34,17 @@ body{
     position: relative;
     top: 12px;
 }
-    #botbar{
-        background-color: #F3DCFF;
-        height: 115px;
-        width: 390px;
-        text-align: center;
-        display:inline-flex;
-        flex-direction:row;
-        justify-content: space-between;
-        position: fixed;
-        bottom:0px;
-    }
-    
-    .botbar{
-        border-style:solid;
-        border-color: black;
-        width: 200px;
-        border-radius: 10px;
-    }
-    .icon{
-        margin-top: 4px;
-        width: 100px;
-        height: 100px;
-    }
-    
+#botbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: fixed;
+    bottom:0px;
+}
 #map {
     height: 626px;
     width: 390px;
@@ -68,3 +54,14 @@ body{
     position: absolute;
     top: 15px
 }
+.botbar{
+    border-style:solid;
+    border-color: black;
+    width: 200px;
+    border-radius: 10px;
+}
+.icon{
+    margin-top: 4px;
+    width: 100px;
+    height: 100px;
+}    

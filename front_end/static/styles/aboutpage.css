@@ -1,3 +1,21 @@
+body{
+    background-color: #F8EAFF ;
+    width: 390px;
+    height: 1500px;
+}
+h1 {
+    text-decoration: underline;
+    font-size: 30px;
+}
+h2 {
+    font-size: 20px;
+}
+h3{
+    font-size: 40px;
+}
+li{
+    font-size: 20px;
+}
 #topbar{
     background-color: #F3DCFF;
     height: 115px;
@@ -9,35 +27,14 @@
     border-style: solid;
     top: 0px;
 }
-h1 {
-    text-decoration: underline;
-    font-size: 30px;
-}
-h2 {
-    
-    font-size: 20px;
-}
-h3{
-    font-size: 40px;
-}
-li{
-    font-size: 20px;
-}
 #topone{
     padding-top: 125px;
     display:list-item;
-    
 }
 #logo{
     left: 25px;
     position: fixed;
     top: 10px
-}
-
-body{
-    background-color: #F8EAFF ;
-    width: 390px;
-    height: 1500px;
 }
 #botbar{
     background-color: #F3DCFF;
@@ -49,12 +46,7 @@ body{
     justify-content: space-between;
     position: fixed;
     bottom:0px;
-    
 }
-#wtmw{
-    height: 623px;
-}
-
 .botbar{
     border-style:solid;
     border-color: black;
@@ -65,8 +57,4 @@ body{
     margin-top: 4px;
     width: 100px;
     height: 100px;
-}
-#map {
-    height: 623px;
-    width: 390px;
 }
