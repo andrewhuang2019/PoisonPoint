@@ -46,3 +46,7 @@ body{
     width: 100px;
     height: 100px;
 }
+
+#location_division{
+    overflow-y: scroll;
+}
