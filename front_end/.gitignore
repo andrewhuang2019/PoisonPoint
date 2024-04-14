@@ -1,1 +1,4 @@
-.env
+.env  
+frontend/__pycache__/
+__pycache__/
+*.py[cod]
