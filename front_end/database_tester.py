@@ -25,18 +25,18 @@ class DatabaseTester:
         self.rh.db.initialize_dbs()
 
         # get random inputs from a set list
-        np.random.seed(131)
+        np.random.seed(111)
         NUM_TESTS = 100
         for i in range(NUM_TESTS):
             id = np.random.choice(['ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJW-f1xlxvv4cRtUO6EwzWSh4',  
                         'ChIJh9mQmcVov4cRI-4Fj5L-Sno', 'ChIJOeGYLltvv4cRFQXi4Obzqpw', 'ChIJl6y18hFmv4cRoSNJ6ZOTwUs', 
                         'ChIJSwMlXVtvv4cR_tVq7XQXdUA', 'ChIJx1pLxFpvv4cR7Fdn1nhSoNE', 'ChIJF5VYEllvv4cRPBN0BLHaPnM'])
-            days_since = np.random.randint(4)
-            time = t.time() - ((1000) + np.random.randint(200000))
+            days_since = np.random.randint(3)
+            time = int(t.time()) - ((1000) + np.random.randint(200000))
 
             # get a random list of True,True,False....
             bools = []
-            for i in range(9):
+            for j in range(9):
                 bools.append (np.random.choice([True,False]))
             
             # get rid of brackets
@@ -45,6 +45,7 @@ class DatabaseTester:
             name = self.rh.get_info_from_id(id)["name"]
 
             self.rh.db.add_to_reports(id, days_since, time, bools, name)
+            print(f"Num iteration: {i}")
 
     def get_analytics_from_existing_db(self):
         id_list = self.rh.get_dangerous_ids_near_coords(38.9717, -95.2353, 5000)
@@ -59,9 +60,6 @@ def main():
     tester = DatabaseTester()
     tester.create_random_report()
     #tester.get_analytics_from_existing_db()
-
-    tester = DatabaseTester()
-    tester.rh = ReportHandler()
 
     
 

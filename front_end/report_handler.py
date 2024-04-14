@@ -55,16 +55,17 @@ class ReportHandler:
     # Returns a list of place_ids inside of a given radius and lat,lng coordinate
     # the list is also sorted by the weighted danger sum
     # radius is measured in meters
-    def get_dangerous_ids_near_coords(self, lat, lng, radius=5000):
+    def get_dangerous_ids_near_coords(self, lat, lng, radius=50000):
         LIMIT = 3
 
         # get sorted ids
         ids = self.google_api.get_place_ids_in_radius_with_coords(lat, lng, radius)
         ids.sort(reverse=True, key=self.get_danger_weight)
 
+        print([self.get_danger_weight(id) for id in ids])
         # limit to LIMIT
         if(len(ids) > LIMIT):
-            ids = ids[:(LIMIT - 1)]
+            ids = ids[:LIMIT]
         
         return ids
     
@@ -79,11 +80,12 @@ class ReportHandler:
     # Returns (food_item, ratio_mentioned_above)
     def get_commonly_reported_items(self, id):
         reports_by_id = self.db.get_reports_with_place_id(id)
-
+        print(f"total reports:{len(reports_by_id)}")
+        print(f"id: {id}")
         total_reports = len(reports_by_id)
 
         # initialize a dict of zero sums (no bad reports for any item yet)
-        index_to_sum_poisoned = []
+        index_to_sum_poisoned = [0,0,0,0,0,0,0,0,0]
         
         # traverse through each report for a given restaurant
         for report in reports_by_id:

@@ -106,6 +106,3 @@ class DatabaseHelper:
 
         # reset ids back to 1
         self.reports_id = 1
-
-db = DatabaseHelper()
-db.print_reports()
