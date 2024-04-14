@@ -5,7 +5,7 @@
 
 ## Introduction  
 
-This is _____, your innovative solution to diagonosing which restaurant you were food poisoned by!  
+This is Poison Point, your innovative solution to diagonosing which restaurant you were food poisoned by!  
 
 ## Quick Start 
 
@@ -17,7 +17,7 @@ This is _____, your innovative solution to diagonosing which restaurant you were
 5. Use the report feature on the bottom of the page.  
 
 ## About the Project
-_____ was created in 36 hours for the HackKU hackathon in Lawrence, Kansas. It aims to solve the problem that people face when choosing a place to order food, while also keeping track of which food places may have caused food poisoning to occur.  
+Poison Point was created in 36 hours for the HackKU hackathon in Lawrence, Kansas. It aims to solve the problem that people face when choosing a place to order food, while also keeping track of which food places may have caused food poisoning to occur.  
 
 ## Challenges 
 During the event, we faced many challenges in implementing the project as we intended. The main difficulty was figuring out how to get the data submitted by the user from the html files to the databases which were handled by python.  
