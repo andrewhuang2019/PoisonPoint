@@ -11,19 +11,14 @@
 }
 h3 {
     font-size: 40px;
-
 }
 #topone{
-    padding-top: 100px;
-    
-    
+    padding-top: 75px;
 }
 body{
     background-color: #F8EAFF;
-    height: 800px;
+    height: 1000px;
 }
-
-
 #botbar{
     background-color: #F3DCFF;
     height: 115px;
@@ -46,4 +41,21 @@ body{
     margin-top: 4px;
     width: 100px;
     height: 100px;
+}
+input {
+    height: 20px;
+    display: block;
+    border-style: solid;
+    border-color: black;
+    width: 50%;
+    background-color: #F1D5FF;
+    display: inline-flexbox;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+h4{
+    font-size: 25px;
+    text-decoration: underline;
 }
