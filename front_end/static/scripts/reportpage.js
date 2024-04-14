@@ -3,7 +3,9 @@ var location_number = 0;
 
 var removed_restaurant_array = [];
 var selected_restaurant = "";
-var selected_foods = [];
+var selected_foods1 = [];
+var selected_foods2 = [];
+var selected_foods3 = [];
 
 //<input type="text" placeholder="Enter a restaurant" id="autocomplete0" />
 //<script>initAutocomplete(0)</script>
@@ -16,7 +18,7 @@ function create_new_location(){
     //creates a new select tag in the html document
     //var new_select = document.createElement('select');
 
-    if (location_number < 5){
+    if (location_number < 3){
         var new_input = document.createElement('input');
 
         new_input.type = "text";
@@ -42,7 +44,7 @@ function create_new_location(){
     
     
     } 
-    if (location_number == 4) {
+    if (location_number == 2) {
         removed_plus = document.getElementById('plus_id');
         removed_plus.remove();
     }
@@ -86,15 +88,33 @@ function store_array(restaurants){
 }*/
 
 function check_checkboxes(){
-    var checkboxes = document.querySelectorAll('input[name="food[]"]:checked');
-    checkboxes.forEach(function(checkbox) {
-        selected_foods.push(checkbox.value);
+    var checkboxes1 = document.querySelectorAll('input[name="restaurant1"]:checked');
+    var checkboxes2 = document.querySelectorAll('input[name="restaurant2"]:checked');
+    var checkboxes3 = document.querySelectorAll('input[name="restaurant3"]:checked');
+    checkboxes1.forEach(function(checkbox) {
+        selected_foods1.push(checkbox.value);
+    });
+    checkboxes2.forEach(function(checkbox) {
+        selected_foods2.push(checkbox.value);
+    });
+    checkboxes3.forEach(function(checkbox) {
+        selected_foods3.push(checkbox.value);
     });
 
     //prints out the foods that are chosen in the array
-    for(let num in selected_foods){
+    for(let num in selected_foods1){
         var paragraph = document.createElement('p');
-        paragraph.textContent = selected_foods[num];
+        paragraph.textContent = selected_foods1[num];
+        document.getElementById('food_division').appendChild(paragraph);
+    }
+    for(let num in selected_foods2){
+        var paragraph = document.createElement('p');
+        paragraph.textContent = selected_foods2[num];
+        document.getElementById('food_division').appendChild(paragraph);
+    }
+    for(let num in selected_foods3){
+        var paragraph = document.createElement('p');
+        paragraph.textContent = selected_foods3[num];
         document.getElementById('food_division').appendChild(paragraph);
     }
 }
