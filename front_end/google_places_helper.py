@@ -7,7 +7,7 @@ class GooglePlacesHelper:
     def __init__(self):
 
         # hide my API key from you bastardly hungry wolves
-        load_dotenv()   
+        load_dotenv('.env')   
         API_KEY = os.environ['GOOGLE_MAPS_API'] 
         self.google_places = GooglePlaces(API_KEY)         
         self.geolocator = Nominatim(user_agent=API_KEY)    

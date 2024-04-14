@@ -1,6 +1,9 @@
 from flask import Flask, request, render_template
+from report_handler import ReportHandler
 
 app = Flask(__name__)
+
+rh = ReportHandler()
 
 @app.route('/')
 def loginpage():
