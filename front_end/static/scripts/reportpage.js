@@ -44,7 +44,7 @@ function create_new_location(){
     
     
     } 
-    if (location_number == 2) {
+    if (location_number == 3) {
         removed_plus = document.getElementById('plus_id');
         removed_plus.remove();
     }
