@@ -3,24 +3,33 @@
 <html>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/mainpage.css') }}">
     <head>
+        <script>
+            function initMap() {
+                var center = { lat: 38.9717, lng: -95.2353 };
+    
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 19, center: center, disableDefaultUI: true,});
 
+                var marker = new google.maps.Marker({ position: center, map: map });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR924KH0p6IDMCsOaG5rMmEo17JSl5K2U&callback=initMap" async defer></script>
     </head>
 
-    <body id='mp1'>
+    <body>
         <div id="topbar" class="sticky">
             <h3> Map </h3>
         </div>
 
         <div>
             <a href="mainpage2" id="buttonthing"><img src="https://www.svgrepo.com/show/8335/list.svg" height="25px" width="25px" id="listicon"></a>
-            <img src="https://m.media-amazon.com/images/I/71ZVA6QfbOL._AC_UF894,1000_QL80_.jpg" width="390" height="623" id="bigmap"/>
-
+            <div id="map"></div>
         </div>
 
         <div id="botbar" class="sticky">
-            <a class="botbar"><img src="https://static-00.iconduck.com/assets.00/gear-emoji-2045x2048-orqh5x5v.png" width="50" height="50" class="icon"/></a>
+            <a class="botbar"><img src="https://static-00.iconduck.com/assets.00/settings-icon-2048x2046-cw28eevx.png" width="50" height="50" class="icon"/></a>
             <a href="reportpage" class="botbar"> <img src="https://www.svgrepo.com/show/93424/exclamation-mark-inside-a-circle.svg" width="50" height="50" class="icon"/> </a>
-            <a href="educationpage" class="botbar"> <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/books.png" width="50" height="50" class="icon"/> </a>
+            <a href="educationpage" class="botbar"> <img src="https://static.thenounproject.com/png/903291-200.png" width="50" height="50" class="icon"/> </a>
         </div>
 
 

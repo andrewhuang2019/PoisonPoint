@@ -6,14 +6,15 @@
     display:inline-flex;
     flex-direction:column;
     position: fixed;
+    border-style: solid;
+    top: 8px;
 }
 h3 {
     font-size: 40px;
-    margin-top:50px;
+   
 }
 #topone{
     padding-top: 150px;
-    
     display:list-item;
     
 }
@@ -32,6 +33,8 @@ body{
     flex-direction:row;
     justify-content: space-between;
     position: fixed;
+    bottom:0px;
+    
 }
 #wtmw{
     height: 623px;
@@ -41,6 +44,7 @@ body{
     border-style:solid;
     border-color: black;
     width: 200px;
+    border-radius: 10px;
 }
 .icon{
     margin-top: 4px;

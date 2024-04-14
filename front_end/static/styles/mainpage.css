@@ -5,27 +5,11 @@
     text-align: center;
     display:inline-flex;
     flex-direction:column;
-    position: fixed;
+    border-style: solid;
 }
 h3 {
     font-size: 40px;
-    margin-top:50px;
-}
-#topone{
-    padding-top: 150px;
     
-    display:list-item;
-    
-}
-#mp1{
-    background-color: #F8EAFF ;
-    width: 390px;
-    height: 844px;
-}
-#mp2{
-    background-color: #F8EAFF ;
-    width: 390px;
-    height: 1000px;
 }
 #botbar{
     background-color: #F3DCFF;
@@ -35,7 +19,7 @@ h3 {
     display:inline-flex;
     flex-direction:row;
     justify-content: space-between;
-    position: fixed;
+    bottom:0px;
 }
 #buttonthing{
     width: 50px;
@@ -50,20 +34,17 @@ h3 {
     flex-direction: column;
     align-items: center;
     color: inherit;
-    position: fixed;
     z-index: 1;
 }
 #listicon{
     position: relative;
     top: 4px;
 }
-#wtmw{
-    height: 623px;
-}
 .botbar{
     border-style:solid;
     border-color: black;
     width: 200px;
+    border-radius: 10px;
 }
 .icon{
     margin-top: 4px;
@@ -71,6 +52,6 @@ h3 {
     height: 100px;
 }
 #map {
-    height: 623px;
+    height: 626px;
     width: 390px;
 }

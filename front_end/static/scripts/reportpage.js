@@ -16,15 +16,37 @@ function create_new_location(){
     //creates a new select tag in the html document
     //var new_select = document.createElement('select');
 
-    var new_input = document.createElement('input');
+    if (location_number < 5){
+        var new_input = document.createElement('input');
 
-    new_input.type = "text";
-    new_input.id = 'autocomplete' + location_number;
-    new_input.placeholder = "Enter a restaurant";
+        new_input.type = "text";
+        new_input.id = 'autocomplete' + location_number;
+        new_input.placeholder = "Enter a restaurant";
+    
+        document.getElementById('location_form').append(new_input);
+    
+        initAutocomplete(location_number);
 
-    document.getElementById('location_form').append(new_input);
+        var new_time = document.createElement('input');
+        new_time.type = "date";
+        new_time.name = "time" + String(location_number);
+        new_time.id = "time" + String(location_number);
+    
+        document.getElementById('location_form').appendChild(new_time);
+    
+        //appends a break to the tag with the location_form id
+        document.getElementById('location_form').appendChild(document.createElement('br'));
+    
+        location_number++;
+        new_input.onchange = onPlaceChanged();
+    
+    
+    } 
+    if (location_number == 4) {
+        removed_plus = document.getElementById('plus_id');
+        removed_plus.remove();
+    }
 
-    initAutocomplete(location_number);
 
     // //sets the select tag attributes for id and name
     // new_select.id = "places" + location_number;
@@ -51,17 +73,6 @@ function create_new_location(){
     // //appends the select tag to the tag with the location_form id
     // document.getElementById('location_form').appendChild(new_select);
 
-    var new_time = document.createElement('input');
-    new_time.type = "date";
-    new_time.name = "time" + String(location_number);
-    new_time.id = "time" + String(location_number);
-
-    document.getElementById('location_form').appendChild(new_time);
-
-    //appends a break to the tag with the location_form id
-    document.getElementById('location_form').appendChild(document.createElement('br'));
-
-    location_number++;
 
 }
 
@@ -129,6 +140,7 @@ function onPlaceChanged(){
     if (!place.geometry){
         document.getElementById('autocomplete').placeholder = 'Enter a restaurant';
     } else{
+
         var data = {
             "name": place.name,
             "ID": place.place_id,
@@ -137,12 +149,13 @@ function onPlaceChanged(){
         
         var jsonData = JSON.stringify(data);
 
-        fetch('/process', {
+        fetch('/summarypage', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             },
             body: jsonData
         })
+
     }
 }

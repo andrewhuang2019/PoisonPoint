@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def loginpage():
+
     return render_template('loginpage.html')
     
 @app.route('/mainpage')
@@ -22,8 +23,16 @@ def educationpage():
 def reportpage():
     return render_template('reportpage.html')
 
-@app.route('/summarypage')
+@app.route('/summarypage', methods=["POST"])
 def summarypage():
+    query= request.json
+    name = query['name']
+    id = query['ID']
+    location = query['location']['location']
+    print(name)
+    print(id)
+    print(location)
+
     return render_template('summarypage.html')
 
 if __name__ == '__main__':

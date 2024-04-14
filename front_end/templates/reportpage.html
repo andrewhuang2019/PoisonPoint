@@ -17,10 +17,10 @@
             <div id="location_division">
                 <form id="location_form">
 
-                    <h4>Where did you eat?</h4>
+                    <h4 id='topone'>Where did you eat?</h4>
 
                 </form>
-                <button onclick="create_new_location()">+</button> <br />
+                <button id="plus_id" onclick="create_new_location()">+</button> <br />
                 <button onclick="onPlaceChanged()">Submit Restaurants</button>
 
             </div>    
@@ -32,41 +32,48 @@
             <h4> I ate the following: </h4>
 
             <form>
-                <input type="checkbox" name="food[]" id="food1" value="fish">
-                <label for="food1">Fish</label><br />
-                <input type="checkbox" name="food[]" id="food2" value="lettuce">
-                <label for="food2">Lettuce</label><br />
-                <input type="checkbox" name="food[]" id="food3" value="chicken">
-                <label for="food3">Chicken</label><br />
-                <input type="checkbox" name="food[]" id="food4" value="beef">
-                <label for="food4">Beef</label><br />
-                <input type="checkbox" name="food[]" id="food5" value="eggs">
-                <label for="food5">Eggs</label><br />
+                <div>
+                    <input type="checkbox" name="food[]" id="food1" value="fish">
+                    <label for="food1">Fish</label><br />
+                    <input type="checkbox" name="food[]" id="food2" value="lettuce">
+                    <label for="food2">Lettuce</label><br />
+                    <input type="checkbox" name="food[]" id="food3" value="chicken">
+                    <label for="food3">Chicken</label><br />
+                    <input type="checkbox" name="food[]" id="food4" value="beef">
+                    <label for="food4">Beef</label><br />
+                    <input type="checkbox" name="food[]" id="food5" value="eggs">
+                    <label for="food5">Eggs</label><br />
+                </div>
 
-
-
-                <input type="checkbox" name="food[]" id="food6" value="shellfish">
-                <label for="food6">Shellfish</label><br />
-                <input type="checkbox" name="food[]" id="food7" value="milk">
-                <label for="food7">Milk</label><br />
-                <input type="checkbox" name="food[]" id="food8" value="peanut">
-                <label for="food8">Peanut</label><br />
-                <input type="checkbox" name="food[]" id="food9" value="flour">
-                <label for="food9">Flour</label><br />
-                <input type="checkbox" name="food[]" id="food10" value="wasabi">
-                <label for="food9">Wasabi</label><br />
+                <div>
+                    <input type="checkbox" name="food[]" id="food6" value="shellfish">
+                    <label for="food6">Shellfish</label><br />
+                    <input type="checkbox" name="food[]" id="food7" value="milk">
+                    <label for="food7">Milk</label><br />
+                    <input type="checkbox" name="food[]" id="food8" value="peanut">
+                    <label for="food8">Peanut</label><br />
+                    <input type="checkbox" name="food[]" id="food9" value="flour">
+                    <label for="food9">Flour</label><br />
+                    <input type="checkbox" name="food[]" id="food10" value="wasabi">
+                    <label for="food9">Wasabi</label><br />
+                </div>
+                
             </form>
 
             <button onclick="check_checkboxes()">Check food</button>
 
+            <br />
+
+            <a href="summarypage">Generate Summary</a>
+
         </div>
 
-        <div>
-            <a><img src="https://static-00.iconduck.com/assets.00/gear-emoji-2045x2048-orqh5x5v.png" width="50" height="50"/></a>
-            <a href="mainpage"> <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/house.png" width="50" height="50"/> </a>
-            <a href="educationpage"> <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/books.png" width="50" height="50"/> </a>
+        <div id="botbar" class="sticky">
+            <a class="botbar"><img src="https://static-00.iconduck.com/assets.00/settings-icon-2048x2046-cw28eevx.png" width="50" height="50" class="icon"/></a>
+            <a href="mainpage" class="botbar"> <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="50" height="50" class="icon"/> </a>
+            <a href="educationpage" class="botbar"> <img src="https://static.thenounproject.com/png/903291-200.png" width="50" height="50" class="icon"/> </a>
         </div>
-
+    
         
     </body>
 
