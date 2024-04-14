@@ -55,8 +55,8 @@ class ReportHandler:
     # Returns a list of place_ids inside of a given radius and lat,lng coordinate
     # the list is also sorted by the weighted danger sum
     # radius is measured in meters
-    def get_dangerous_ids_near_coords(self, lat, lng, radius):
-        LIMIT = 10
+    def get_dangerous_ids_near_coords(self, lat, lng, radius=5000):
+        LIMIT = 3
 
         # get sorted ids
         ids = self.google_api.get_place_ids_in_radius_with_coords(lat, lng, radius)
