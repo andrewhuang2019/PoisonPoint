@@ -1,9 +1,13 @@
 from flask import Flask, request, render_template
+from report_handler import ReportHandler
 
 app = Flask(__name__)
 
+rh = ReportHandler()
+
 @app.route('/')
 def loginpage():
+
     return render_template('loginpage.html')
     
 @app.route('/mainpage')
@@ -24,7 +28,19 @@ def reportpage():
 
 @app.route('/summarypage')
 def summarypage():
+
     return render_template('summarypage.html')
+
+@app.route('/summary', methods=["POST"])
+def summary():
+    query= request.json
+    name = query['name']
+    id = query['ID']
+    location = query['location']['location']
+    print(name)
+    print(id)
+    print(location)
+    return 'summary'
 
 @app.route('/aboutpage')
 def aboutpage():

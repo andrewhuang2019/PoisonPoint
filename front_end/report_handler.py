@@ -17,7 +17,8 @@ class ReportHandler:
         
         # holds the list of foods that are prone to give food poisoning
         # fish, lettuce, chicken, beef, etc..
-        self.issue_foods = []
+        self.issue_foods = ["Fish","Lettuce","Chicken","Beef","Eggs",
+                            "Shellfish","Milk","Flour","Wasabi"]
 
     # The weight is our way of approximating the valid amount of reports a restaurant has
     # Essentially, older reports have less weight than newer reports, reaching zero weight at three days
@@ -53,6 +54,7 @@ class ReportHandler:
     
     # Returns a list of place_ids inside of a given radius and lat,lng coordinate
     # the list is also sorted by the weighted danger sum
+    # radius is measured in meters
     def get_dangerous_ids_near_coords(self, lat, lng, radius):
         LIMIT = 10
 
@@ -70,7 +72,7 @@ class ReportHandler:
     # returns a dict that contains "name", "address", and "img"
     # for a map element
     def get_info_from_id(self, id):
-        self.google_api.get_info_from_place_id(self, id)
+        return self.google_api.get_info_from_place_id(id)
 
     # Returns a list of tuples of the most likely causes of food poisoning for a given restaurant
     # Values are sorted by the highest vals of (items_eaten) / (total_reports)
