@@ -1,6 +1,6 @@
 body {
     width: 390px;
-    height: 844px;
+    height: 800px;
     background-image: linear-gradient(
 		#D4D3E1 0%,
 		#9D6CDB 86%);
@@ -42,6 +42,7 @@ a {
     text-decoration: dotted;
 }
 img{
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
 }

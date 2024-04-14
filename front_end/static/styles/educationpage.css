@@ -62,3 +62,8 @@ body{
     height: 623px;
     width: 390px;
 }
+#logo{
+    left: 25px;
+    position: fixed;
+    top: 10px
+}
