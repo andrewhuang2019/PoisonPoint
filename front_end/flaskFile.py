@@ -29,7 +29,7 @@ def mainpage2():
     ids = rh.get_dangerous_ids_near_coords(lat, lng)
     dicts = [rh.google_api.get_info_from_place_id(id) for id in ids]
     causes = [rh.get_commonly_reported_items(id) for id in ids]
-    weights = [rh.get_danger_weight(id) for id in ids]
+    weights = [round(rh.get_danger_weight(id),2) for id in ids]
     return render_template('mainpage2.html', dicts=dicts, causes=causes, weights=weights)
 
 @app.route('/educationpage')
