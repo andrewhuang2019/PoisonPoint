@@ -1,7 +1,7 @@
 # Name Placeholder
 
 ## Demo  
-[Video](url) [Devpost](https://devpost.com/submit-to/20219-hackku-2024/manage/submissions)
+[Video](url) [Devpost](https://devpost.com/software/646853)
 
 ## Introduction  
 
