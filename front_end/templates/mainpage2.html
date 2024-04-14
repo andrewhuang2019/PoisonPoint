@@ -21,26 +21,26 @@
                     <div class="info_container">
                         <div class="img_nameaddress">
                             <div>
-                                <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWxzfGVufDB8fDB8fHww" height=100px width=100px class="img">
+                                <img src="{dicts[0]['img']}" height=100px width=100px class="img", alt="Pictured: {dicts[0]['name']}">
                             </div>
                             <div class="name_address">
                                 <div class="name">
-                                    the epic hartford hotel
+                                    {{dicts[0]["name"]}}
                                 </div>
                                 <div class="address">
-                                    2176 E 23rd St, Lawrence, KS 66046
+                                    {{dicts[0]["address"]}}
                                 </div>
                             </div>
                         </div>
                         <div class="be_weary_of">
-                            Be weary of the wasabi!
+                            Be weary of the {{causes[0]}}!
                         </div>
                     </div>
                     <div id='tl1' class="tl">
                         Threat Level
                     </div>
                     <div class="weighted_num">
-                        3.4
+                        {{weights[0]}}
                     </div>
                 </div>
                 <hr>
@@ -48,26 +48,26 @@
                     <div class="info_container">
                         <div class="img_nameaddress">
                             <div>
-                                <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWxzfGVufDB8fDB8fHww" height=100px width=100px class="img">
+                                <img src="{dicts[1]['img']}" height=100px width=100px class="img", alt="Pictured: {dicts[1]['name']}">
                             </div>
                             <div class="name_address">
                                 <div class="name">
-                                    the epic hartford hotel
+                                    {{dicts[1]["name"]}}
                                 </div>
                                 <div class="address">
-                                    2176 E 23rd St, Lawrence, KS 66046
+                                    {{dicts[1]["address"]}}
                                 </div>
                             </div>
                         </div>
                         <div class="be_weary_of">
-                            Be weary of the wasabi!
+                            Be weary of the {{causes[1]}}!
                         </div>
                     </div>
                     <div id='tl2' class="tl">
                         Threat Level
                     </div>
                     <div class="weighted_num">
-                        3.4
+                        {{weights[1]}}
                     </div>
                 </div>
                 <hr>
@@ -75,26 +75,26 @@
                     <div class="info_container">
                         <div class="img_nameaddress">
                             <div>
-                                <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWxzfGVufDB8fDB8fHww" height=100px width=100px class="img">
+                                <img src="{dicts[2]['img']}" height=100px width=100px class="img", alt="Pictured: {dicts[2]['name']}">
                             </div>
                             <div class="name_address">
                                 <div class="name">
-                                    the epic hartford hotel
+                                    {{dicts[2]["name"]}}
                                 </div>
                                 <div class="address">
-                                    2176 E 23rd St, Lawrence, KS 66046
+                                    {{dicts[2]["address"]}}
                                 </div>
                             </div>
                         </div>
                         <div class="be_weary_of">
-                            Be weary of the wasabi!
+                            Be weary of the {{causes[2]}}!
                         </div>
                     </div>
                     <div id='tl3' class="tl">
                         Threat Level
                     </div>
                     <div class="weighted_num">
-                        3.4
+                        {{weights[2]}}
                     </div>
                 </div>
             </div>

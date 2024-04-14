@@ -46,7 +46,8 @@ class GooglePlacesHelper:
 
         return_dict = {"name" : place.name,
                        "address" : place.formatted_address,
-                       "img" : self._get_first_image_from_place(place)}
+                       "img" : self._get_first_image_from_place(place),
+                       "id": place_id}
         
         return return_dict
     

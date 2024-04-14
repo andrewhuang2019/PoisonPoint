@@ -10,6 +10,9 @@ rh = ReportHandler()
 locations = []
 times = []
 
+lat = 38.9717
+lng = -95.2353
+
 @app.route('/')
 def loginpage():
 
@@ -21,7 +24,13 @@ def mainpage():
 
 @app.route('/mainpage2')
 def mainpage2():
-    return render_template('mainpage2.html')
+    # returns info dict for the top 3 most dangerous restaurants near your lat, lng
+    # also returns lists for main causes and weighted_sums for each restaurant
+    ids = rh.get_dangerous_ids_near_coords(lat, lng)
+    dicts = [rh.google_api.get_info_from_place_id(id) for id in ids]
+    causes = [rh.get_commonly_reported_items(id) for id in ids]
+    weights = [rh.get_danger_weight(id) for id in ids]
+    return render_template('mainpage2.html', dicts=dicts, causes=causes, weights=weights)
 
 @app.route('/educationpage')
 def educationpage():
@@ -99,7 +108,7 @@ def update_db(summaries):
             delta_time = curr_time - eaten_datetime_obj
             days_elapsed = delta_time.days
             
-            time_sec = time.time()
+            time_sec = int(time.time())
 
             bool_list = []
             for ill_food in items:
