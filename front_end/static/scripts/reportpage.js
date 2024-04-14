@@ -149,7 +149,7 @@ function onPlaceChanged(){
         
         var jsonData = JSON.stringify(data);
 
-        fetch('/summarypage', {
+        fetch('/summary', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

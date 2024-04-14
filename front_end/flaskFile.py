@@ -23,8 +23,13 @@ def educationpage():
 def reportpage():
     return render_template('reportpage.html')
 
-@app.route('/summarypage', methods=["POST"])
+@app.route('/summarypage')
 def summarypage():
+
+    return render_template('summarypage.html')
+
+@app.route('/summary', methods=["POST"])
+def summary():
     query= request.json
     name = query['name']
     id = query['ID']
@@ -32,8 +37,7 @@ def summarypage():
     print(name)
     print(id)
     print(location)
-
-    return render_template('summarypage.html')
+    return 'summary'
 
 if __name__ == '__main__':
     app.run(debug=True)
