@@ -98,6 +98,7 @@ def time_summary():
 @app.route('/userlocation', methods=["POST"])
 def userloc():
     query = request.json
+<<<<<<< Updated upstream
     
     lat = query['lat']
     lng = query['lng']
@@ -106,6 +107,9 @@ def userloc():
     # loc_tuple = (name, id)
     # locations.append(loc_tuple)
     return 'summary'
+=======
+    return render_template('mainpage.html', data=query)
+>>>>>>> Stashed changes
 
 # should be called when food_summary() is called
 # makes report objects based on all user information
