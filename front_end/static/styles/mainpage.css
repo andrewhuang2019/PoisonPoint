@@ -65,6 +65,6 @@ body{
 }
 #logo{
     left: 25px;
-    position: fixed;
+    position: absolute;
     top: 15px
 }

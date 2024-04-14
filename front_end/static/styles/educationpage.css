@@ -63,7 +63,8 @@ body{
     width: 390px;
 }
 #logo{
-    left: 25px;
+    left: 18px;
     position: fixed;
-    top: 10px
+    top: 10px;
+    z-index:0 ;
 }
