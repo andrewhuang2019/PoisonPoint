@@ -1,47 +1,9 @@
-#topbar{
-    background-color: #F3DCFF;
-    height: 115px;
-    width: 390px;
-    text-align: center;
-    display:inline-flex;
-    flex-direction:column;
-    position: fixed;
-    border-style: solid;
-    top: 0px;
-    z-index: 1;
-}
-h3 {
-    font-size: 40px;
-}
-#topone{
-    padding-top: 75px;
-}
 body{
     background-color: #F8EAFF;
     height: 1350px;
 }
-#botbar{
-    background-color: #F3DCFF;
-    height: 115px;
-    width: 390px;
-    text-align: center;
-    display:inline-flex;
-    flex-direction:row;
-    justify-content: space-between;
-    position: fixed;
-    bottom:0px;
-}
-
-.botbar{
-    border-style:solid;
-    border-color: black;
-    width: 200px;
-    border-radius: 10px;
-}
-.icon{
-    margin-top: 4px;
-    width: 100px;
-    height: 100px;
+h3 {
+    font-size: 40px;
 }
 input {
     height: 20px;
@@ -60,24 +22,48 @@ h4{
     font-size: 25px;
     text-decoration: underline;
 }
+h5{
+    position:relative;
+    text-decoration: underline;
+    top: 30px;
+}
+#topbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:column;
+    position: fixed;
+    border-style: solid;
+    top: 0px;
+    z-index: 1;
+}
+#topone{
+    padding-top: 75px;
+}
+#botbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: fixed;
+    bottom:0px;
+}
 #checks{
-        right:20px;
-        display: flex;
-        max-width: 450px;
-        position: relative;
-    
-bottom: 70px;
+    right:20px;
+    display: flex;
+    max-width: 450px;
+    position: relative;
+    bottom: 70px;
 }
 #chunk{
     flex: 1; /* Each column takes equal space */
     margin: 0 10px; /* Adjust as needed for spacing between columns */
     padding: 20px;
-    
-}
-.checkb{
-    display: inline;
-    width: 10px;
-    top: 10px;
 }
 #plus_id{
     border-style: solid;
@@ -99,12 +85,6 @@ bottom: 70px;
     top: 10px;
     border-radius: 10px;
 }
-h5{
-    position:relative;
-    text-decoration: underline;
-    top: 30px;
-    
-}
 #checkfood{
     border-style: solid;
     border-color: black;
@@ -118,8 +98,6 @@ h5{
     border-radius: 10px;
     font-size: 25px;
 }
-
-
 #summary{
     border-style: solid;
     border-color: black;
@@ -140,4 +118,19 @@ h5{
     top: 10px;
     z-index: 1;
 }
-
+.botbar{
+    border-style:solid;
+    border-color: black;
+    width: 200px;
+    border-radius: 10px;
+}
+.icon{
+    margin-top: 4px;
+    width: 100px;
+    height: 100px;
+}
+.checkb{
+    display: inline;
+    width: 10px;
+    top: 10px;
+}

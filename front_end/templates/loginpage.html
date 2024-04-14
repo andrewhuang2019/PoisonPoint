@@ -2,24 +2,42 @@
 <html>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/loginpage.css') }}">
     <head>
-        
+    
     </head>
 
 
     <body>
-        
+        <script>
+          function getLocation() {
+            if (navigator.geolocation) {
+              var position = navigator.geolocation.getCurrentPosition();
+
+              var data = {
+                'lat': position.coords.latitude,
+                'lng': position.coords.longitude
+              };
+
+              fetch('/mainpage.html', {
+              method: "post",
+              headers: {
+                'Content-type': 'application/json'
+              },
+              body: JSON.stringify({data})
+              })
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+          </script>    
             <div id='bigline'></div>
         
         <img src="{{url_for('static', filename='styles/imgs/logo.png')}}" width = '390px'>
 
         <br /> 
 
-        
-
-            <a href="mainpage" >Continue</a>
-        
-
-        
+            
+              <button onclick="getLocation()">Locate</button>
+              <a href="mainpage">Continue</a>
     </body>
     
 

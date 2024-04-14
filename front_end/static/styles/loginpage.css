@@ -4,12 +4,6 @@ body {
     background-image: linear-gradient(
 		#D4D3E1 0%,
 		#9D6CDB 86%);
-    
-}
-#bigline {
-    border: #252525;
-    border-style: dashed;
-    width:390px; 
 }
 input {
     display: block;
@@ -25,7 +19,7 @@ label {
     width: 50%;
     text-align: center;
 }
-a {
+a{
     background-color: #F1D5FF;
     line-height: 50px;
     border-radius: 6px;
@@ -41,8 +35,29 @@ a {
     color: #252525;
     text-decoration: dotted;
 }
+button {
+    background-color: #F1D5FF;
+    line-height: 50px;
+    border-radius: 6px;
+    border-style:groove;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+	font-size: 40px;
+	min-width: 251px;
+    min-height: 68px;
+    color: #252525;
+    text-decoration: dotted;
+}
 img{
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
+}
+#bigline {
+    border: #252525;
+    border-style: dashed;
+    width:390px; 
 }

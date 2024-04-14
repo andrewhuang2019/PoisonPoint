@@ -1,3 +1,15 @@
+body{
+    background-color: #F8EAFF;
+}
+h3 {
+    font-size: 40px;
+}
+hr{
+    max-width: 390px;
+    margin-left:0;
+    clear: both;
+    visibility: hidden;
+}
 #topbar{
     background-color: #F3DCFF;
     height: 115px;
@@ -8,14 +20,6 @@
     border-style: solid;
     top: 0px;
 }
-h3 {
-    font-size: 40px;
-    
-}
-body{
-    background-color: #F8EAFF;
-}
-
 #buttonthing{
     width: 75px;
     height: 50px;
@@ -35,30 +39,17 @@ body{
     position: relative;
     top: 12px;
 }
-    #botbar{
-        background-color: #F3DCFF;
-        height: 115px;
-        width: 390px;
-        text-align: center;
-        display:inline-flex;
-        flex-direction:row;
-        justify-content: space-between;
-        position: fixed;
-        bottom:0px;
-    }
-    
-    .botbar{
-        border-style:solid;
-        border-color: black;
-        width: 200px;
-        border-radius: 10px;
-    }
-    .icon{
-        margin-top: 4px;
-        width: 100px;
-        height: 100px;
-    }
-    
+#botbar{
+    background-color: #F3DCFF;
+    height: 115px;
+    width: 390px;
+    text-align: center;
+    display:inline-flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: fixed;
+    bottom:0px;
+}
 #map {
     height: 626px;
     width: 390px;
@@ -68,26 +59,32 @@ body{
     position: fixed;
     top: 15px
 }
-
-hr{
-    max-width: 390px;
-    margin-left:0;
-    clear: both;
-    visibility: hidden;
+.botbar{
+    border-style:solid;
+    border-color: black;
+    width: 200px;
+    border-radius: 10px;
 }
+.icon{
+    margin-top: 4px;
+    width: 100px;
+    height: 100px;
+}   
 .restr_container{
     display: flex;
     background-color: rgb(252, 209, 252);
     max-width: 390px;
     font-family: "Gills Sans", sans-serif;
-    border-radius: 5%;
+    border-radius: 10px 10px 10px 10px; 
 }
 .img_nameaddress{
     display: flex;
 }
 .img{
     display:flex;
-    border-radius: 10px 3px 10px 3px; 
+    border-radius: 10px 5px 10px 5px; 
+    padding-top: 7px;
+    padding-left: 7px;
 }
 .name_address{
     display: flex;
@@ -107,6 +104,7 @@ hr{
     margin-bottom: 6%;
     margin-left: 1%;
     font-style: italic;
+    padding-left: 7px;
 }
 .weighted_num{
     width: 110px;

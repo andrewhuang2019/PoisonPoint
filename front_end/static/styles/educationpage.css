@@ -1,3 +1,18 @@
+body{
+    background-color: #F8EAFF ;
+    width: 390px;
+    height: 1250px;
+}
+h3 {
+    font-size: 40px;
+}
+h4{
+    font-size: 25px;
+    text-decoration: underline;
+}
+p{
+    font-size: 20px;
+}
 #topbar{
     background-color: #F3DCFF;
     height: 115px;
@@ -9,27 +24,9 @@
     border-style: solid;
     top: 0px;
 }
-h3 {
-    font-size: 40px;
-   
-}
-h4{
-    font-size: 25px;
-    text-decoration: underline;
-}
-p{
-    font-size: 20px;
-}
 #topone{
     padding-top: 150px;
     display:list-item;
-    
-}
-
-body{
-    background-color: #F8EAFF ;
-    width: 390px;
-    height: 1250px;
 }
 #botbar{
     background-color: #F3DCFF;
@@ -41,12 +38,13 @@ body{
     justify-content: space-between;
     position: fixed;
     bottom:0px;
-    
 }
-#wtmw{
-    height: 623px;
+#logo{
+    left: 18px;
+    position: fixed;
+    top: 10px;
+    z-index:0 ;
 }
-
 .botbar{
     border-style:solid;
     border-color: black;
@@ -57,14 +55,4 @@ body{
     margin-top: 4px;
     width: 100px;
     height: 100px;
-}
-#map {
-    height: 623px;
-    width: 390px;
-}
-#logo{
-    left: 18px;
-    position: fixed;
-    top: 10px;
-    z-index:0 ;
 }
