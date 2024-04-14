@@ -28,9 +28,7 @@ class DatabaseTester:
         np.random.seed(111)
         NUM_TESTS = 100
         for i in range(NUM_TESTS):
-            id = np.random.choice(['ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJW-f1xlxvv4cRtUO6EwzWSh4',  
-                        'ChIJh9mQmcVov4cRI-4Fj5L-Sno', 'ChIJOeGYLltvv4cRFQXi4Obzqpw', 'ChIJl6y18hFmv4cRoSNJ6ZOTwUs', 
-                        'ChIJSwMlXVtvv4cR_tVq7XQXdUA', 'ChIJx1pLxFpvv4cR7Fdn1nhSoNE', 'ChIJF5VYEllvv4cRPBN0BLHaPnM'])
+            id = np.random.choice(['ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJLTvA4Fxvv4cRmNaLDmD6DlY', 'ChIJibki8z1vv4cR5kq3I7uVd1g', 'ChIJh9mQmcVov4cRI-4Fj5L-Sno', 'ChIJOeGYLltvv4cRFQXi4Obzqpw'])
             days_since = np.random.randint(3)
             time = int(t.time()) - ((1000) + np.random.randint(200000))
 
@@ -53,14 +51,17 @@ class DatabaseTester:
         print(f"epicenter id: {id_list[0]}")
         print("expected: 'ChIJW-f1xlxvv4cRtUO6EwzWSh4'")
 
-def main(self):
+def main():
     pass
     #test_basic_db_commands()
     
     tester = DatabaseTester()
-    # tester.create_random_report()
+    tester.create_random_report()
     # tester.get_analytics_from_existing_db()
-    #tester.rh.get_danger_weight(tester.)
+    #tester.rh.get_danger_weight(tester)
+    #tester.rh.get_danger_weight("ChIJW-f1xlxvv4cRtUO6EwzWSh4")
+    #print(tester.rh.google_api.get_place_ids_in_radius_with_city_state("Lawrence, KS", 5000))
+    #tester.rh.get_danger_weight("ChIJSwMlXVtvv4cR_tVq7XQXdUA")
 
     
 

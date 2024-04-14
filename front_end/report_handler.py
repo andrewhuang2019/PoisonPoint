@@ -25,6 +25,7 @@ class ReportHandler:
     # This is because you are most likely not getting food poisoning from food you ate three days ago.
     def get_danger_weight(self, restr_id):
         reports_by_restr = self.db.get_reports_with_place_id(restr_id)
+        print(restr_id)
 
         curr_time = int(time.time())
 
@@ -37,7 +38,9 @@ class ReportHandler:
             if(report[2] <= 1):
                 weight = 1
             else:
-                weight = max(0, (-1/2) * report[2] + 3/2)
+                weight = max(0, (-0.5) * report[2] + 1.5)
+
+            print(f"weight = {weight}")
 
             # this part is meant to prioritize recent reports, and ignore ones from 3+ days ago
             weight_mult = 1
@@ -49,7 +52,7 @@ class ReportHandler:
             weight = weight * weight_mult
 
             sum_weights += weight
-    
+        print(f"sum_weight: {sum_weights}")
         return sum_weights
     
     # Returns a list of place_ids inside of a given radius and lat,lng coordinate
@@ -61,9 +64,6 @@ class ReportHandler:
         # get sorted ids
         ids = self.google_api.get_place_ids_in_radius_with_coords(lat, lng, radius)
         ids.sort(reverse=True, key=self.get_danger_weight)
-
-        print([self.get_danger_weight(id) for id in ids])
-        self.db.print_reports()
         # limit to LIMIT
         if(len(ids) > LIMIT):
             ids = ids[:LIMIT]
@@ -81,10 +81,7 @@ class ReportHandler:
     # Returns (food_item, ratio_mentioned_above)
     def get_commonly_reported_items(self, id):
         reports_by_id = self.db.get_reports_with_place_id(id)
-        print(f"total reports:{len(reports_by_id)}")
-        print(f"id: {id}")
         test_num_vals = len(self.db.get_reports_with_place_id("ChIJ66e8kTaEwIcRZVlRJEfgWmc"))
-        print(f"total reports for this test: {test_num_vals}")
         total_reports = len(reports_by_id)
 
         # initialize a dict of zero sums (no bad reports for any item yet)
