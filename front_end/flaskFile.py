@@ -41,7 +41,7 @@ def summary():
 
 @app.route('/food_summary', methods=["POST"])
 def food_summary():
-    query= request.json
+    query = request.json
     foods1 = query['foods1']
     foods2 = query['foods2']
     foods3 = query['foods3']
@@ -50,8 +50,11 @@ def food_summary():
     print(foods3)
     return 'summary'
 
-@app.route('/time_summary', method=['POST'])
+@app.route('/time_summary', methods=['POST'])
 def time_summary():
+    query = request.json
+    time = query['time']
+    print(time)
     return 'summary'
 
 if __name__ == '__main__':

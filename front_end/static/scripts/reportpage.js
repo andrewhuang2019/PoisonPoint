@@ -6,6 +6,7 @@ var selected_restaurant = "";
 var selected_foods1 = [];
 var selected_foods2 = [];
 var selected_foods3 = [];
+var times = [];
 
 function create_new_location(){
 
@@ -22,18 +23,20 @@ function create_new_location(){
 
         var new_time = document.createElement('input');
         new_time.type = "date";
-        new_time.name = "time" + String(location_number);
-        new_time.id = "time" + String(location_number);
+        new_time.name = "time" + location_number;
+        new_time.id = "time" + location_number;
+        
+        //new_time.onchange = ;
+        //new_time.addEventListener("change", checkTimes(location_number));
     
         document.getElementById('location_form').appendChild(new_time);
     
         //appends a break to the tag with the location_form id
         document.getElementById('location_form').appendChild(document.createElement('br'));
-    
+
         location_number++;
-        new_input.onchange = onPlaceChanged();
-    
-    
+        //new_input.onchange = onPlaceChanged();
+
     } 
     if (location_number == 3) {
         removed_plus = document.getElementById('plus_id');
@@ -76,6 +79,22 @@ function check_checkboxes(){
     selected_foods2 = [];
     selected_foods3 = [];
 
+}
+
+function checkTimes(num){
+    
+    data_value = document.getElementById('time' + num).value;
+    var data = {'time': data_value}
+    //window.alert("reached checkTimes");
+    jsonData = JSON.stringify(data);
+
+    fetch('time_summary', {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: jsonData
+    })
 }
 
 let autocomplete;
