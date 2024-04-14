@@ -28,7 +28,7 @@ def summarypage():
 
     return render_template('summarypage.html')
 
-@app.route('/summary', methods=["POST"])
+@app.route('/location_summary', methods=["POST"])
 def summary():
     query= request.json
     name = query['name']
@@ -37,6 +37,21 @@ def summary():
     print(name)
     print(id)
     print(location)
+    return 'summary'
+
+@app.route('/food_summary', methods=["POST"])
+def food_summary():
+    query= request.json
+    foods1 = query['foods1']
+    foods2 = query['foods2']
+    foods3 = query['foods3']
+    print(foods1)
+    print(foods2)
+    print(foods3)
+    return 'summary'
+
+@app.route('/time_summary', method=['POST'])
+def time_summary():
     return 'summary'
 
 if __name__ == '__main__':

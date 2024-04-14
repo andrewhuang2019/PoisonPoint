@@ -101,22 +101,26 @@ function check_checkboxes(){
         selected_foods3.push(checkbox.value);
     });
 
-    //prints out the foods that are chosen in the array
-    for(let num in selected_foods1){
-        var paragraph = document.createElement('p');
-        paragraph.textContent = selected_foods1[num];
-        document.getElementById('food_division').appendChild(paragraph);
+    data = {
+        'foods1': selected_foods1,
+        'foods2': selected_foods2,
+        'foods3': selected_foods3
     }
-    for(let num in selected_foods2){
-        var paragraph = document.createElement('p');
-        paragraph.textContent = selected_foods2[num];
-        document.getElementById('food_division').appendChild(paragraph);
-    }
-    for(let num in selected_foods3){
-        var paragraph = document.createElement('p');
-        paragraph.textContent = selected_foods3[num];
-        document.getElementById('food_division').appendChild(paragraph);
-    }
+
+    jsonData = JSON.stringify(data);
+
+    fetch('food_summary', {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: jsonData
+    })
+
+    selected_foods1 = [];
+    selected_foods2 = [];
+    selected_foods3 = [];
+
 }
 
 function select_restaurant(restaurant){
@@ -165,11 +169,12 @@ function onPlaceChanged(){
             "name": place.name,
             "ID": place.place_id,
             "location": place.geometry
+            
         };
         
         var jsonData = JSON.stringify(data);
 
-        fetch('/summary', {
+        fetch('/location_summary', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
