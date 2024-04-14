@@ -43,7 +43,6 @@ class DatabaseTester:
             name = self.rh.get_info_from_id(id)["name"]
 
             self.rh.db.add_to_reports(id, days_since, time, bools, name)
-            print(f"Num iteration: {i}")
 
     def get_analytics_from_existing_db(self):
         id_list = self.rh.get_dangerous_ids_near_coords(38.9717, -95.2353, 5000)

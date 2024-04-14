@@ -25,7 +25,6 @@ class ReportHandler:
     # This is because you are most likely not getting food poisoning from food you ate three days ago.
     def get_danger_weight(self, restr_id):
         reports_by_restr = self.db.get_reports_with_place_id(restr_id)
-        print(restr_id)
 
         curr_time = int(time.time())
 
@@ -40,8 +39,6 @@ class ReportHandler:
             else:
                 weight = max(0, (-0.5) * report[2] + 1.5)
 
-            print(f"weight = {weight}")
-
             # this part is meant to prioritize recent reports, and ignore ones from 3+ days ago
             weight_mult = 1
             SECS_IN_DAY = 86400
@@ -52,7 +49,6 @@ class ReportHandler:
             weight = weight * weight_mult
 
             sum_weights += weight
-        print(f"sum_weight: {sum_weights}")
         return sum_weights
     
     # Returns a list of place_ids inside of a given radius and lat,lng coordinate
@@ -81,7 +77,6 @@ class ReportHandler:
     # Returns (food_item, ratio_mentioned_above)
     def get_commonly_reported_items(self, id):
         reports_by_id = self.db.get_reports_with_place_id(id)
-        test_num_vals = len(self.db.get_reports_with_place_id("ChIJ66e8kTaEwIcRZVlRJEfgWmc"))
         total_reports = len(reports_by_id)
 
         # initialize a dict of zero sums (no bad reports for any item yet)
@@ -97,16 +92,15 @@ class ReportHandler:
                     index_to_sum_poisoned[i] += 1
 
         index_to_ratio = [num / total_reports for num in index_to_sum_poisoned]
-
         tuples_of_food_ratio = []
         for i, num in enumerate(index_to_ratio):
             food_ratio = (self.issue_foods[i], num)
             tuples_of_food_ratio.append(food_ratio)
         
         # sorts the tuples by their ratio
-        sorted_tuples = tuples_of_food_ratio.sort(reverse=True, key=self._helper_sort)
+        tuples_of_food_ratio.sort(reverse=True, key=self._helper_sort)
 
-        return sorted_tuples
+        return tuples_of_food_ratio[0][0]
     
     def _helper_sort(self, food_ratio_tuple):
         return food_ratio_tuple[1]
@@ -114,7 +108,11 @@ class ReportHandler:
     # Since items_eaten is stored as a string like "True,False,False,True"
     # We need a function to turn that into an actual list of booleans
     def _get_bool_list_from_db_str(self, db_string):
-        db_strings = db_string.strip().split(",")
+        db_strings = db_string.strip().replace(" ", "").split(",")
+        print("initial string:")
+        print(db_string)
+        print("after:")
+        print(db_strings)
         return [(string == "True") for string in db_strings]
     
     def add_to_db(self, place_id, days_elapsed, time, items_eaten, restaurant_name):
