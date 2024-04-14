@@ -120,3 +120,18 @@ hr{
     margin-bottom: 8%;
     margin-right: 3%;
 }
+.tl{
+    position: absolute;
+    left:298px;
+    font-size: 15px;
+    text-decoration: underline;
+}
+#tl1{
+    top: 158px;
+}
+#tl2{
+    top: 335px;
+}
+#tl3{
+    top: 513px;
+}
