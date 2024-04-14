@@ -25,7 +25,7 @@ label {
     width: 50%;
     text-align: center;
 }
-a {
+a{
     background-color: #F1D5FF;
     line-height: 50px;
     border-radius: 6px;
@@ -38,6 +38,22 @@ a {
 	font-size: 40px;
 	min-width: 251px;
     min-height: 58px;
+    color: #252525;
+    text-decoration: dotted;
+}
+button {
+    background-color: #F1D5FF;
+    line-height: 50px;
+    border-radius: 6px;
+    border-style:groove;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+	font-size: 40px;
+	min-width: 251px;
+    min-height: 68px;
     color: #252525;
     text-decoration: dotted;
 }
