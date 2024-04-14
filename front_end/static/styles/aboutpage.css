@@ -28,6 +28,11 @@ li{
     display:list-item;
     
 }
+#logo{
+    left: 25px;
+    position: fixed;
+    top: 10px
+}
 
 body{
     background-color: #F8EAFF ;

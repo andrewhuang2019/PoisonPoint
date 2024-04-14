@@ -134,4 +134,10 @@ h5{
     padding: 10px;
     left: 50px;
 }
+#logo{
+    left: 25px;
+    position: fixed;
+    top: 10px;
+    z-index: 1;
+}
 
