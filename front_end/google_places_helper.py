@@ -42,6 +42,8 @@ class GooglePlacesHelper:
         # evil method that magically makes more attributes of the place object appear
         place.get_details()
 
+        print(f"dir: {dir(place.geo_location)}")
+
         return_dict = {"name" : place.name,
                        "address" : place.formatted_address,
                        "img" : self._get_first_image_from_place(place)}
@@ -61,11 +63,11 @@ class GooglePlacesHelper:
 
     # testing do not worry shh...
     def _test(self):
-        ids = self.get_place_ids_in_radius_with_city_state("Lawrence, KS")
+        ids = self.get_place_ids_in_radius_with_city_state("Lawrence, KS", 5000)
         id_0 = ids[5]
         print (self.get_info_from_place_id(id_0))
 
 if __name__ == "__main__":
     pass
-    # test = GooglePlacesHelper()
-    # test._test()
+    test = GooglePlacesHelper()
+    test._test()

@@ -1,2 +1,7 @@
+<<<<<<< Updated upstream
 .env  
 __pycache__/
+=======
+.env
+__pycache__/
+>>>>>>> Stashed changes

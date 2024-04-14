@@ -26,7 +26,7 @@ function create_new_location(){
         new_time.name = "time" + location_number;
         new_time.id = "time" + location_number;
         
-        //new_time.onchange = ;
+        new_time.onchange = checkTimes.bind(null, location_number);
         //new_time.addEventListener("change", checkTimes(location_number));
     
         document.getElementById('location_form').appendChild(new_time);

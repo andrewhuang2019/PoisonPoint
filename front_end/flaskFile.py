@@ -31,6 +31,11 @@ def summarypage():
 
     return render_template('summarypage.html')
 
+@app.route('/aboutpage')
+def aboutpage():
+    return render_template('aboutpage.html')
+
+#has data for a single location name, a single ID, and a single geographical latitute/longitude 
 @app.route('/location_summary', methods=["POST"])
 def summary():
     query= request.json
@@ -42,10 +47,7 @@ def summary():
     print(location)
     return 'summary'
 
-@app.route('/aboutpage')
-def aboutpage():
-    return render_template('aboutpage.html')
-
+#has data for all three locations and the foods that the user ate at them
 @app.route('/food_summary', methods=["POST"])
 def food_summary():
     query = request.json
@@ -57,6 +59,7 @@ def food_summary():
     print(foods3)
     return 'summary'
 
+#has data for a single time (for a single location)
 @app.route('/time_summary', methods=['POST'])
 def time_summary():
     query = request.json
