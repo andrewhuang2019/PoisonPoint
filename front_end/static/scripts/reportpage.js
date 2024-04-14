@@ -7,16 +7,7 @@ var selected_foods1 = [];
 var selected_foods2 = [];
 var selected_foods3 = [];
 
-//<input type="text" placeholder="Enter a restaurant" id="autocomplete0" />
-//<script>initAutocomplete(0)</script>
-//<input type="date" name="time">
-
 function create_new_location(){
-
-    //update_restaurant_array();
-
-    //creates a new select tag in the html document
-    //var new_select = document.createElement('select');
 
     if (location_number < 3){
         var new_input = document.createElement('input');
@@ -49,43 +40,7 @@ function create_new_location(){
         removed_plus.remove();
     }
 
-
-    // //sets the select tag attributes for id and name
-    // new_select.id = "places" + location_number;
-    // new_select.name = "location" + String(location_number);
-
-    // //document.getElementById('places').addEventListener('click');
-    
-
-    // //new_select.onchange = select_restaurant(document.getElementById(this));
-
-    // //creates a new option tag in the html document
-
-
-    // //sets the option tag attributes for the text content and its value
-    // for (let num in current_restaurant_array){
-    //     var option = document.createElement('option');
-    //     option.textContent = current_restaurant_array[num];
-    //     option.value = option.textContent;
-    //     option.id = "location_option" + num;
-    //     new_select.appendChild(option);
-
-    // }
-    
-    // //appends the select tag to the tag with the location_form id
-    // document.getElementById('location_form').appendChild(new_select);
-
-
 }
-
-/*
-function store_array(restaurants){
-
-    for(let restaurant in restaurants){
-        updated_array.push(restaurant);
-    }
-
-}*/
 
 function check_checkboxes(){
     var checkboxes1 = document.querySelectorAll('input[name="restaurant1"]:checked');
@@ -120,29 +75,6 @@ function check_checkboxes(){
     selected_foods1 = [];
     selected_foods2 = [];
     selected_foods3 = [];
-
-}
-
-function select_restaurant(restaurant){
-    /*
-    if (selected_element.value){
-        selected_restaurant.add(selected_element.value);
-        selected_element.dataset.previous_selected = selected_element.value;
-    }    
-    */
-    //trying to get the option value so that i can reference it and pass in the selected restaurant value
-    //so that update restaurant array can splice it out
-    selected_restaurant = restaurant.value;
-}
-
-function update_restaurant_array(){
-    index = current_restaurant_array.indexOf(selected_restaurant);
-    if (index > -1){
-        current_restaurant_array.splice(index, 1);
-    }
-}
-
-function add_restaurant_array(){
 
 }
 
