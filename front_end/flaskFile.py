@@ -27,16 +27,9 @@ def mainpage2():
     # returns info dict for the top 3 most dangerous restaurants near your lat, lng
     # also returns lists for main causes and weighted_sums for each restaurant
     ids = rh.get_dangerous_ids_near_coords(lat, lng)
-    for id in ids:
-        print(f"weight:{rh.get_danger_weight(id)}")
-    rh.db.print_reports()
     dicts = [rh.google_api.get_info_from_place_id(id) for id in ids]
     causes = [rh.get_commonly_reported_items(id) for id in ids]
     weights = [rh.get_danger_weight(id) for id in ids]
-
-    print(dicts)
-    print(causes)
-    print(weights)
     return render_template('mainpage2.html', dicts=dicts, causes=causes, weights=weights)
 
 @app.route('/educationpage')
@@ -98,18 +91,7 @@ def time_summary():
 @app.route('/userlocation', methods=["POST"])
 def userloc():
     query = request.json
-<<<<<<< Updated upstream
-    
-    lat = query['lat']
-    lng = query['lng']
-
-    # print(lat,lng)
-    # loc_tuple = (name, id)
-    # locations.append(loc_tuple)
-    return 'summary'
-=======
     return render_template('mainpage.html', data=query)
->>>>>>> Stashed changes
 
 # should be called when food_summary() is called
 # makes report objects based on all user information
