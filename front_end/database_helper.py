@@ -88,7 +88,6 @@ class DatabaseHelper:
         reports = self.open()
 
         table = reports.execute("SELECT ID, PLACE_ID, DAYS_ELAPSED, TIME, ITEMS_EATEN, RESTAURANT_NAME from REPORTS")
-
         for row in table:
             print (f"ID = {row[0]}")
             print (f"PLACE_ID = {row[1]}")
@@ -107,3 +106,6 @@ class DatabaseHelper:
 
         # reset ids back to 1
         self.reports_id = 1
+
+db = DatabaseHelper()
+db.print_reports()
