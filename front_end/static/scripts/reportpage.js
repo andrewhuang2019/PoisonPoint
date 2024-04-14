@@ -62,6 +62,7 @@ function create_new_location(){
     document.getElementById('location_form').appendChild(document.createElement('br'));
 
     location_number++;
+    new_input.onchange = onPlaceChanged();
 
 }
 
@@ -137,7 +138,7 @@ function onPlaceChanged(){
         
         var jsonData = JSON.stringify(data);
 
-        fetch('/process', {
+        fetch('/summarypage', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
