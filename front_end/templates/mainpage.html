@@ -5,12 +5,29 @@
     <head>
         <script>
             function initMap() {
-                var center = { lat: 38.9717, lng: -95.2353 };
+                var center = { lat: 38.9717, lng: -95.2353 };   //set 'realtime' user location here
     
                 var map = new google.maps.Map(
                     document.getElementById('map'), { zoom: 19, center: center, disableDefaultUI: true,});
 
                 var marker = new google.maps.Marker({ position: center, map: map });
+
+                var customMarkerIcon = {
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Biohazard_symbol_%28red%29.svg/2048px-Biohazard_symbol_%28red%29.svg.png', 
+                    scaledSize: new google.maps.Size(45, 45),
+                    origin: new google.maps.Point(0, 0), 
+                    anchor: new google.maps.Point(25, 50) 
+                };
+                //coords of red zone restaurants
+                var coords = [{lat: 38.971776351172444, lng:  -95.23572734275672}, {lat: 38.97240970939415, lng:  -95.23609258270864}]
+
+                for (coord of coords){
+                    var marker = new google.maps.Marker({
+                    position: {lat: coord['lat'], lng:  coord['lng']},  
+                    map: map,
+                    icon: customMarkerIcon
+                    });
+                }
             }
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR924KH0p6IDMCsOaG5rMmEo17JSl5K2U&callback=initMap" async defer></script>
