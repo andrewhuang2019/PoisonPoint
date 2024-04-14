@@ -62,3 +62,9 @@ body{
     height: 623px;
     width: 390px;
 }
+#logo{
+    left: 18px;
+    position: fixed;
+    top: 10px;
+    z-index:0 ;
+}

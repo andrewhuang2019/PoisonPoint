@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-    <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/mainpage.css') }}">
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/mainpage2.css') }}">
     <head>
 
     </head>
@@ -10,12 +10,13 @@
         <div id="topbar" class="sticky">
             <h3> List </h3>
         </div>
+        <img id='logo' src="{{url_for('static', filename='styles/imgs/logo.png')}}" width = '100px'>
 
         <div id="map">
             <a href="mainpage" id="buttonthing"><img src="https://freepngimg.com/save/66930-map-google-icons-collection-maps-computer-marker/512x512" height="25px" width="25px" id="listicon"></a>
-            <h2 id='topone'>hello</h2>
             
             <div class="all_dangerous_restrs">
+                <br>
                 <div class="restr_container">
                     <div class="info_container">
                         <div class="img_nameaddress">
@@ -39,7 +40,7 @@
                         3.4
                     </div>
                 </div>
-
+                <hr>
                 <div class="restr_container">
                     <div class="info_container">
                         <div class="img_nameaddress">
@@ -63,7 +64,7 @@
                         3.4
                     </div>
                 </div>
-
+                <hr>
                 <div class="restr_container">
                     <div class="info_container">
                         <div class="img_nameaddress">

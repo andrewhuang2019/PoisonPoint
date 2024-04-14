@@ -65,6 +65,56 @@ body{
 }
 #logo{
     left: 25px;
-    position: absolute;
+    position: fixed;
     top: 15px
+}
+
+hr{
+    max-width: 390px;
+    margin-left:0;
+}
+.restr_container{
+    display: flex;
+    background-color: rgb(252, 179, 252);
+    max-width: 390px;
+    font-family: "Gills Sans", sans-serif;
+}
+.img_nameaddress{
+    display: flex;
+}
+.img{
+    display:flex;
+}
+.name_address{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.name{
+    margin-left: 5%;
+    font-weight: bold;
+}
+.address{
+    font-size: 16px;
+    margin-left: 5%;
+}
+.be_weary_of{
+    margin-top: 6%;
+    margin-bottom: 6%;
+    margin-left: 1%;
+    font-style: italic;
+}
+.weighted_num{
+    width: 110px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: solid;
+    border-color: grey;
+    background-color: rgba(255, 255, 255, 0.593);
+    margin-top: 8%;
+    margin-bottom: 8%;
+    margin-right: 3%;
 }
