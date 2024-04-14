@@ -72,18 +72,22 @@ body{
 hr{
     max-width: 390px;
     margin-left:0;
+    clear: both;
+    visibility: hidden;
 }
 .restr_container{
     display: flex;
     background-color: rgb(252, 179, 252);
     max-width: 390px;
     font-family: "Gills Sans", sans-serif;
+    border-radius: 5%;
 }
 .img_nameaddress{
     display: flex;
 }
 .img{
     display:flex;
+    border-radius: 10px 3px 10px 3px; 
 }
 .name_address{
     display: flex;
