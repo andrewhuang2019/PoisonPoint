@@ -4,8 +4,11 @@
     <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/mainpage.css') }}">
     <head>
         <script>
+            var lati = "{{data.lat}}";
+            var long = "{{data.lng}}";
+
             function initMap() {
-                var center = { lat: 38.9717, lng: -95.2353 };   //set 'realtime' user location here
+                var center = { lat: lati, lng: long };   //set 'realtime' user location here
     
                 var map = new google.maps.Map(
                     document.getElementById('map'), { zoom: 19, center: center, disableDefaultUI: true,});
