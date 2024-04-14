@@ -8,6 +8,7 @@
     position: fixed;
     border-style: solid;
     top: 0px;
+    z-index: 1;
 }
 h3 {
     font-size: 40px;
@@ -17,7 +18,7 @@ h3 {
 }
 body{
     background-color: #F8EAFF;
-    height: 1000px;
+    height: 1350px;
 }
 #botbar{
     background-color: #F3DCFF;
@@ -45,17 +46,92 @@ body{
 input {
     height: 20px;
     display: block;
-    border-style: solid;
+    border-style:solid;
     border-color: black;
-    width: 50%;
+    width: 300px;
+    height: 30px;
     background-color: #F1D5FF;
     display: inline-flexbox;
-    
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 h4{
     font-size: 25px;
     text-decoration: underline;
 }
+#checks{
+        right:20px;
+        display: flex;
+        max-width: 450px;
+        position: relative;
+    
+bottom: 70px;
+}
+#chunk{
+    flex: 1; /* Each column takes equal space */
+    margin: 0 10px; /* Adjust as needed for spacing between columns */
+    padding: 20px;
+    
+}
+.checkb{
+    display: inline;
+    width: 10px;
+    top: 10px;
+}
+#plus_id{
+    border-style: solid;
+    border-color: black;
+    background-color: #F1D5FF;
+    color: rgb(0, 0, 0);
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+#submit{
+    border-style: solid;
+    border-color: black;
+    background-color: #F1D5FF;
+    color: rgb(0, 0, 0);
+    width: 170px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    border-radius: 10px;
+}
+h5{
+    position:relative;
+    text-decoration: underline;
+    top: 30px;
+    
+}
+#checkfood{
+    border-style: solid;
+    border-color: black;
+    background-color: #F1D5FF;
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 50px;
+    left: 50px;
+    bottom: 50px;
+    position: relative;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+
+#summary{
+    border-style: solid;
+    border-color: black;
+    background-color: #F1D5FF;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    text-decoration: dotted;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    border-radius: 10px;
+    padding: 10px;
+    left: 50px;
+}
+
