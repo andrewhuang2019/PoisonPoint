@@ -5,10 +5,11 @@
     text-align: center;
     display:inline-flex;
     flex-direction:column;
+    border-style: solid;
 }
 h3 {
     font-size: 40px;
-    margin-top:50px;
+    
 }
 #botbar{
     background-color: #F3DCFF;
@@ -18,6 +19,7 @@ h3 {
     display:inline-flex;
     flex-direction:row;
     justify-content: space-between;
+    bottom:0px;
 }
 #buttonthing{
     width: 50px;
@@ -42,6 +44,7 @@ h3 {
     border-style:solid;
     border-color: black;
     width: 200px;
+    border-radius: 10px;
 }
 .icon{
     margin-top: 4px;
@@ -49,6 +52,6 @@ h3 {
     height: 100px;
 }
 #map {
-    height: 623px;
+    height: 626px;
     width: 390px;
 }

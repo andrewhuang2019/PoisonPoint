@@ -6,19 +6,20 @@
     display:inline-flex;
     flex-direction:column;
     position: fixed;
+    border-style: solid;
+   
 }
 h3 {
     font-size: 40px;
-    margin-top:50px;
+
 }
 #topone{
-    padding-top: 150px;
+    padding-top: 100px;
     
-    display:list-item;
     
 }
 body{
-    background-color: antiquewhite;
+    background-color: #F8EAFF;
 }
 
 
@@ -31,12 +32,14 @@ body{
     flex-direction:row;
     justify-content: space-between;
     position: fixed;
+    bottom:0px;
 }
 
 .botbar{
     border-style:solid;
     border-color: black;
     width: 200px;
+    border-radius: 10px;
 }
 .icon{
     margin-top: 4px;
