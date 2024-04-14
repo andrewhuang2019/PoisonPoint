@@ -1,9 +1,14 @@
 from flask import Flask, request, render_template
 from report_handler import ReportHandler
+from datetime import datetime
+import time
 
 app = Flask(__name__)
 
 rh = ReportHandler()
+
+locations = []
+times = []
 
 @app.route('/')
 def loginpage():
@@ -22,9 +27,15 @@ def mainpage2():
 def educationpage():
     return render_template('educationpage.html')
 
+# clear existing logs of locations and times
 @app.route('/reportpage')
 def reportpage():
+    clear_lists()
     return render_template('reportpage.html')
+
+def clear_lists():
+    locations.clear()
+    times.clear()
 
 @app.route('/summarypage')
 def summarypage():
@@ -42,9 +53,10 @@ def summary():
     name = query['name']
     id = query['ID']
     location = query['location']['location']
-    print(name)
-    print(id)
-    print(location)
+
+    # append name, id to locations
+    loc_tuple = (name, id)
+    locations.append(loc_tuple)
     return 'summary'
 
 #has data for all three locations and the foods that the user ate at them
@@ -54,9 +66,9 @@ def food_summary():
     foods1 = query['foods1']
     foods2 = query['foods2']
     foods3 = query['foods3']
-    print(foods1)
-    print(foods2)
-    print(foods3)
+    
+    summaries = [foods1, foods2, foods3]
+    update_db(summaries)
     return 'summary'
 
 #has data for a single time (for a single location)
@@ -64,8 +76,45 @@ def food_summary():
 def time_summary():
     query = request.json
     time = query['time']
-    print(time)
+    times.append(time)
     return 'summary'
+
+# should be called when food_summary() is called
+# makes report objects based on all user information
+# only append if there is a summary available
+def update_db(summaries):
+    items = ["fish","lettuce","chicken","beef","eggs",
+            "shellfish","milk","flour","wasabi"]
+    for i, food_summary in enumerate(summaries):
+        if(food_summary):
+            restr_name = locations[i][0]
+
+            place_id = locations[i][1]
+
+            raw_time = times[i]
+            raw_time = raw_time.replace("-", "/")
+            eaten_datetime_obj = datetime.strptime(raw_time, '%Y/%m/%d')
+            curr_time = datetime.today()
+            # datetime - datetime obj = delta_time obj, how convinient!
+            delta_time = curr_time - eaten_datetime_obj
+            days_elapsed = delta_time.days
+            
+            time_sec = time.time()
+
+            bool_list = []
+            for ill_food in items:
+                bool_list.append(ill_food in food_summary)
+            
+            items_eaten = str(bool_list)[1:-1]
+
+            # print(f"place_id = {place_id}")
+            # print(f"days_elapsed: {days_elapsed}")
+            # print(f"time: {time_sec}")
+            # print(f"items_eaten: {items_eaten}")
+            # print(f"restr_name: {restr_name}")
+
+            rh.add_to_db(place_id, days_elapsed, time_sec, items_eaten, restr_name)
+            render_template("/reportpage")
 
 if __name__ == '__main__':
     app.run(debug=True)
