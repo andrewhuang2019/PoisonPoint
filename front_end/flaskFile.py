@@ -88,6 +88,19 @@ def time_summary():
     times.append(time)
     return 'summary'
 
+@app.route('/userlocation', methods=["POST"])
+def userloc():
+    query = request.json
+    print(query)
+    
+    # lat = query['lat']
+    # lng = query['lng']
+
+    # print(lat,lng)
+    # loc_tuple = (name, id)
+    # locations.append(loc_tuple)
+    return 'summary'
+
 # should be called when food_summary() is called
 # makes report objects based on all user information
 # only append if there is a summary available
