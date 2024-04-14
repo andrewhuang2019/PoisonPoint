@@ -63,6 +63,7 @@ class ReportHandler:
         ids.sort(reverse=True, key=self.get_danger_weight)
 
         print([self.get_danger_weight(id) for id in ids])
+        self.db.print_reports()
         # limit to LIMIT
         if(len(ids) > LIMIT):
             ids = ids[:LIMIT]
@@ -82,6 +83,8 @@ class ReportHandler:
         reports_by_id = self.db.get_reports_with_place_id(id)
         print(f"total reports:{len(reports_by_id)}")
         print(f"id: {id}")
+        test_num_vals = len(self.db.get_reports_with_place_id("ChIJ66e8kTaEwIcRZVlRJEfgWmc"))
+        print(f"total reports for this test: {test_num_vals}")
         total_reports = len(reports_by_id)
 
         # initialize a dict of zero sums (no bad reports for any item yet)

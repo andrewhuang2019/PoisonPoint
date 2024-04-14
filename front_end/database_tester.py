@@ -5,7 +5,7 @@ import numpy as np
 
 class DatabaseTester:
     def __init__(self):
-        self.rh = None
+        self.rh = ReportHandler()
 
     def test_basic_db_commands(self):
         db = DatabaseHelper()
@@ -53,13 +53,14 @@ class DatabaseTester:
         print(f"epicenter id: {id_list[0]}")
         print("expected: 'ChIJW-f1xlxvv4cRtUO6EwzWSh4'")
 
-def main():
+def main(self):
     pass
     #test_basic_db_commands()
     
     tester = DatabaseTester()
-    tester.create_random_report()
-    #tester.get_analytics_from_existing_db()
+    # tester.create_random_report()
+    # tester.get_analytics_from_existing_db()
+    #tester.rh.get_danger_weight(tester.)
 
     
 
