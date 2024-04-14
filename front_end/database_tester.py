@@ -25,7 +25,7 @@ class DatabaseTester:
         self.rh.db.initialize_dbs()
 
         # get random inputs from a set list
-        np.random.seed(111)
+        np.random.seed(131)
         NUM_TESTS = 100
         for i in range(NUM_TESTS):
             id = np.random.choice(['ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJW-f1xlxvv4cRtUO6EwzWSh4', 'ChIJW-f1xlxvv4cRtUO6EwzWSh4',  
@@ -56,13 +56,13 @@ def main():
     pass
     #test_basic_db_commands()
     
-    #tester = DatabaseTester()
-    #tester.create_random_report()
+    tester = DatabaseTester()
+    tester.create_random_report()
     #tester.get_analytics_from_existing_db()
 
     tester = DatabaseTester()
     tester.rh = ReportHandler()
-    print(tester.rh.google_api.get_info_from_place_id("ChIJW-f1xlxvv4cRtUO6EwzWSh4")["name"])
+
     
 
 if __name__ == "__main__":

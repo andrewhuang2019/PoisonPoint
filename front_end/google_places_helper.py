@@ -1,6 +1,7 @@
 from googleplaces import GooglePlaces, types
 from dotenv import load_dotenv
 from geopy.geocoders import Nominatim
+import requests
 import os
 
 class GooglePlacesHelper:
@@ -41,13 +42,25 @@ class GooglePlacesHelper:
 
         # evil method that magically makes more attributes of the place object appear
         place.get_details()
+        
+        # use Nominatim
+        loc = Nominatim(user_agent="Geopy Library")
 
-        print(f"dir: {dir(place.geo_location)}")
+        # entering the location name
+        executable_url = f"https://nominatim.openstreetmap.org/search?q={place.formatted_address}"
+
+        response = requests.get(executable_url).json()
+        print(response)
+
+        lat = None
+        lng = None
 
         return_dict = {"name" : place.name,
                        "address" : place.formatted_address,
                        "img" : self._get_first_image_from_place(place),
-                       "id": place_id}
+                       "id": place_id,
+                       "lat" : lat,
+                       "lng" : lng}
         
         return return_dict
     
