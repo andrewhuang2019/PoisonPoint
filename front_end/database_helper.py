@@ -21,7 +21,7 @@ class DatabaseHelper:
 
         # initialize db if it does not exist
         try:
-            num = self.get_all_reports().arraysize
+            num = self.get_all_reports().arraysize + 1
         except:
             self.initialize_dbs()
 
@@ -59,6 +59,7 @@ class DatabaseHelper:
     
         reports.execute(f"INSERT INTO REPORTS (ID,PLACE_ID,DAYS_ELAPSED,TIME,ITEMS_EATEN,RESTAURANT_NAME) \
             VALUES ({self.reports_id}, \'{place_id}\',{days_elapsed}, {time}, \'{items_eaten}\', \'{restaurant_name}\')")
+        print(self.reports_id)
         self.reports_id += 1
         
         reports.commit()

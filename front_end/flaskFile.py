@@ -121,14 +121,9 @@ def update_db(summaries):
             
             items_eaten = str(bool_list)[1:-1]
 
-            # print(f"place_id = {place_id}")
-            # print(f"days_elapsed: {days_elapsed}")
-            # print(f"time: {time_sec}")
-            # print(f"items_eaten: {items_eaten}")
-            # print(f"restr_name: {restr_name}")
-
             rh.add_to_db(place_id, days_elapsed, time_sec, items_eaten, restr_name)
-            render_template("/summarypage")
+            print("testing)")
+            rh.db.print_reports()
 
 if __name__ == '__main__':
     app.run(debug=True)

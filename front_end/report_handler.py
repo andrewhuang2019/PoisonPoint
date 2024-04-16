@@ -109,10 +109,6 @@ class ReportHandler:
     # We need a function to turn that into an actual list of booleans
     def _get_bool_list_from_db_str(self, db_string):
         db_strings = db_string.strip().replace(" ", "").split(",")
-        print("initial string:")
-        print(db_string)
-        print("after:")
-        print(db_strings)
         return [(string == "True") for string in db_strings]
     
     def add_to_db(self, place_id, days_elapsed, time, items_eaten, restaurant_name):
