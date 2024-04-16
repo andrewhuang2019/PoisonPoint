@@ -1,7 +1,7 @@
 # Poison Point
 
 ## Demo  
-[Video](url) [Devpost](https://devpost.com/software/646853)
+[Video](https://www.youtube.com/watch?v=CFJ9bohfWO4) [Devpost](https://devpost.com/software/646853)
 
 ## Introduction  
 
